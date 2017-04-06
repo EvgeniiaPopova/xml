@@ -1,0 +1,139 @@
+class GetProdNameXml extends XmlBuilder
+{
+    function createXml()
+    {
+        return $this;
+    }
+
+    function createStructure()
+    {
+        return new GetProductNameMethod();
+
+    }
+
+    function saveXml()
+    {
+        return $this;
+    }
+}
+
+
+class ImportOrdersXml extends XmlBuilder
+{
+    function createXml()
+    {
+        return parent::createXml();
+    }
+
+    function createStructure()
+    {
+        return new ImportOrdersMethod();
+
+    }
+
+    function saveXml()
+    {
+        return $this->saveXml();
+    }
+
+}
+
+class GetProductNameMethod extends CreateStructureAbstract
+{
+    function getStructure()
+    {
+        $sales_orders = $dom->appendChild($dom->createElement('SALES_ORDERS'));
+        $sales_orders_attr = $sales_orders->appendChild($dom->createAttribute('xmlns:xsi'));
+        $sales_orders_attr->nodeValue = 'http://www.w3.org/2001/XMLSchema-instance';
+        $sales_orders_attrib = $sales_orders->appendChild($dom->createAttribute('xsi:noNamespaceSchemaLocation'));
+        $sales_orders_attrib->nodeValue = 'http://www.keystonesoftware.co.uk/xml/KSDXMLImportFormat.xsd';
+        $provider_id = $sales_orders->appendChild($dom->createElement('provider_id'));
+        $provider_id->appendChild($dom->createTextNode('khaos'));
+
+        return $this;
+    }
+}
+
+
+class ImportOrdersMethod extends CreateStructureAbstract
+{
+
+    function getStructure()
+    {
+        $sales_orders = $dom->appendChild($dom->createElement('SALES_ORDERS'));
+        $sales_orders_attr = $sales_orders->appendChild($dom->createAttribute('xmlns:xsi'));
+        $sales_orders_attr->nodeValue = 'http://www.w3.org/2001/XMLSchema-instance';
+        $sales_orders_attrib = $sales_orders->appendChild($dom->createAttribute('xsi:noNamespaceSchemaLocation'));
+        $sales_orders_attrib->nodeValue = 'http://www.keystonesoftware.co.uk/xml/KSDXMLImportFormat.xsd';
+        $provider_id = $sales_orders->appendChild($dom->createElement('provider_id'));
+        $provider_id->appendChild($dom->createTextNode('khaos'));
+
+        $sales_order = $sales_orders->appendChild($dom->createElement('SALES_ORDER'));
+
+        return $this->GetStructure();
+    }
+
+}
+
+
+
+    function getStructure()
+    {
+        $dom = $this->_getDom();
+        $salesOrders = $dom->appendChild($dom->createElement('SALES_ORDERS'));
+        $salesOrders->appendChild($dom->createElement('SALES_ORDER'));
+
+        //return $this->getStructure();
+    }
+
+
+
+$soapresponse = htmlspecialchars($client->request, ENT_QUOTES);
+$xml = new SimpleXMLElement($soapresponse);
+print_r($xml);
+
+
+//$xml = new SimpleXMLElement($soaprequest);
+//$xml = simplexml_load_string($soaprequest);
+//$res = $client->request;
+//echo $xml->SALES_ORDER->CUSTOMER_DETAIL->COMPANY_NAME;
+//
+//print_r($soaprequest);
+//print "<pre>\n";
+
+
+//print "</pre>";
+
+
+//$xml = simplexml_load_file('test.xml');
+//echo $xml->SALES_ORDER->CUSTOMER_DETAIL->COMPANY_NAME;
+
+
+
+require_once 'nusoap/lib/nusoap.php';
+
+
+ini_set('display_errors', 1);
+error_reporting(E_ALL & ~E_NOTICE);
+
+
+$client = new soapclient('http://83.218.157.188:8081/test/khaosids.exe/wsdl/IKosWeb');
+//
+$query = file_get_contents('test.xml');
+$result = $client->__call('ExportOrders', array($query));
+
+$soaprequest = $client->request;
+
+print $soaprequest;
+//$xml = simplexml_load_string($soaprequest);
+//$xml->registerXPathNamespace('SOAP-ENV', 'http://tempuri.org');
+
+//$res = $xml->xpath('//SOAP-ENV:Body');
+
+//foreach ($xml as $item)
+//foreach ($xml->xpath('//soap:Body') as $item)
+//{
+//    print_r($item);
+//}
+
+//print "Request :\n" . $soaprequest . "\n";
