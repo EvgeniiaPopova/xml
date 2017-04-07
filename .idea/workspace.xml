@@ -1,7 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef1eb615-817d-4d72-bc51-f7d9242585d9" name="Default" comment="" />
+    <list default="true" id="ef1eb615-817d-4d72-bc51-f7d9242585d9" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/idex2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/lib/changelog" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/lib/class.nusoap_base.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/lib/class.soap_fault.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/lib/class.soap_parser.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/lib/class.soap_server.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/lib/class.soap_transport_http.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/lib/class.soap_val.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/lib/class.soapclient.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/lib/class.wsdl.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/lib/class.wsdlcache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/lib/class.xmlschema.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/lib/nusoap.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/lib/nusoapmime.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/client1.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/client2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/client3.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/getfile1client.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/getfile2client.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/mimeclient.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/sslclient.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/wsdlclient1.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/wsdlclient10.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/wsdlclient11.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/wsdlclient12.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/wsdlclient13.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/wsdlclient14.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/wsdlclient15.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/wsdlclient2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/wsdlclient3.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/wsdlclient3b.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/wsdlclient3c.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/wsdlclient4.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/wsdlclient5.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/wsdlclient6.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/wsdlclient7.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/wsdlclient8.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nusoap/samples/wsdlclient9.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="xml.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -29,23 +72,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BuilderAbstract.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/BuilderAbstract.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="32" selection-end-column="38" />
-              <folding>
-                <element signature="e#7#99#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nusoap.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nusoap.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="615">
+              <caret line="46" column="44" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
               <folding>
                 <element signature="e#6#98#0#PHP" expanded="true" />
               </folding>
@@ -53,20 +84,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="idex2.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/idex2.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="test.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="180">
               <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
               <folding />
             </state>
@@ -76,14 +97,17 @@
       <file leaf-file-name="useless_classes.bkp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/useless_classes.bkp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-543">
-              <caret line="95" column="44" selection-start-line="95" selection-start-column="44" selection-end-line="95" selection-end-column="44" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -101,8 +125,11 @@
         <option value="$PROJECT_DIR$/classes/soapclient.php" />
         <option value="$PROJECT_DIR$/useless_classes.bkp" />
         <option value="$PROJECT_DIR$/test.xml" />
-        <option value="$PROJECT_DIR$/idex2.php" />
+        <option value="$PROJECT_DIR$/SplClassLoader.php" />
+        <option value="$PROJECT_DIR$/Khaostest.php" />
+        <option value="$PROJECT_DIR$/nusoap.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/idex2.php" />
       </list>
     </option>
   </component>
@@ -164,6 +191,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
       <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
@@ -179,9 +209,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane />
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -195,8 +222,8 @@
       <recent name="$PROJECT_DIR$/classes" />
     </key>
   </component>
-  <component name="RunManager" selected="PHP Script.nusoap.php">
-    <configuration default="false" name="nusoap.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/nusoap.php">
+  <component name="RunManager" selected="PHP Script.index.php">
+    <configuration default="false" name="index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/index.php">
       <method />
     </configuration>
     <configuration default="false" name="xmlBuild.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/xmlBuild.php">
@@ -208,7 +235,7 @@
     <configuration default="false" name="text.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/text.php">
       <method />
     </configuration>
-    <configuration default="false" name="idex2.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/idex2.php">
+    <configuration default="false" name="index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/index.php">
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -242,16 +269,16 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="PHP Script.nusoap.php" />
+      <item index="0" class="java.lang.String" itemvalue="PHP Script.index.php" />
       <item index="1" class="java.lang.String" itemvalue="PHP Script.xmlBuild.php" />
       <item index="2" class="java.lang.String" itemvalue="PHP Script.soapclient.php" />
       <item index="3" class="java.lang.String" itemvalue="PHP Script.text.php" />
-      <item index="4" class="java.lang.String" itemvalue="PHP Script.idex2.php" />
+      <item index="4" class="java.lang.String" itemvalue="PHP Script.index.php" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="PHP Script.nusoap.php" />
-        <item index="1" class="java.lang.String" itemvalue="PHP Script.idex2.php" />
+        <item index="0" class="java.lang.String" itemvalue="PHP Script.index.php" />
+        <item index="1" class="java.lang.String" itemvalue="PHP Script.index.php" />
         <item index="2" class="java.lang.String" itemvalue="PHP Script.text.php" />
         <item index="3" class="java.lang.String" itemvalue="PHP Script.soapclient.php" />
         <item index="4" class="java.lang.String" itemvalue="PHP Script.xmlBuild.php" />
@@ -276,56 +303,37 @@
       <workItem from="1491157918660" duration="3514000" />
       <workItem from="1491203677441" duration="3973000" />
       <workItem from="1491215180870" duration="24249000" />
-      <workItem from="1491375904913" duration="21930000" />
+      <workItem from="1491375904913" duration="42597000" />
+      <workItem from="1491577606132" duration="205000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135653000" />
+    <option name="totallyTimeSpent" value="156525000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="39" y="24" width="1881" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14458494" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14604905" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42951542" sideWeight="0.5022173" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42857143" sideWeight="0.5022173" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964426" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3478735" sideWeight="0.4977827" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977974" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35223556" sideWeight="0.4977827" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293348" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977974" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42951542" sideWeight="0.5022173" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41984734" sideWeight="0.4977827" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14458494" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964426" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977974" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -361,25 +369,35 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/text.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4428">
-          <caret line="164" column="33" selection-start-line="164" selection-start-column="33" selection-end-line="164" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xmlBuild.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
           <folding>
-            <element signature="e#7#99#0#PHP" expanded="true" />
+            <element signature="e#6#98#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/text.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
+          <folding>
+            <element signature="e#6#98#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/useless_classes.bkp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -387,13 +405,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/text.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4428">
+          <caret line="164" column="33" selection-start-line="164" selection-start-column="33" selection-end-line="164" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/xmlBuild.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#99#0#PHP" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/text.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmlBuild.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -401,13 +437,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-          <folding>
-            <element signature="e#7#99#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nusoap.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="10" column="87" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="87" />
@@ -421,7 +454,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -429,9 +461,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#99#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -444,7 +473,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/j.php" />
     <entry file="file://$PROJECT_DIR$/test.xml" />
-    <entry file="file://$PROJECT_DIR$/nusoap.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
@@ -458,7 +487,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -479,7 +507,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2430">
           <caret line="90" column="24" selection-start-line="90" selection-start-column="24" selection-end-line="90" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -495,7 +522,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -510,7 +536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2013">
           <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -518,31 +543,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="7265" column="0" selection-start-line="7265" selection-start-column="0" selection-end-line="7265" selection-end-column="0" />
-          <folding>
-            <marker date="1272314288000" expanded="true" signature="62830:63005" ph="..." />
-            <marker date="1272314288000" expanded="true" signature="63182:63314" ph="..." />
-            <marker date="1272314288000" expanded="true" signature="184125:187589" ph="..." />
-            <marker date="1272314288000" expanded="true" signature="184131:187336" ph="..." />
-            <marker date="1272314288000" expanded="true" signature="184202:185567" ph="..." />
-            <marker date="1272314288000" expanded="true" signature="184661:184706" ph="{...}" />
-            <marker date="1272314288000" expanded="true" signature="184718:184937" ph="{...}" />
-            <marker date="1272314288000" expanded="true" signature="184951:185136" ph="{...}" />
-            <marker date="1272314288000" expanded="true" signature="185151:185386" ph="{...}" />
-            <marker date="1272314288000" expanded="true" signature="185623:187326" ph="..." />
-            <marker date="1272314288000" expanded="true" signature="185680:186403" ph="{...}" />
-            <marker date="1272314288000" expanded="true" signature="186487:186818" ph="{...}" />
-            <marker date="1272314288000" expanded="true" signature="186821:186941" ph="//..." />
-            <marker date="1272314288000" expanded="true" signature="186968:187070" ph="{...}" />
-            <marker date="1272314288000" expanded="true" signature="187130:187217" ph="{...}" />
-            <marker date="1272314288000" expanded="true" signature="187168:187213" ph="{...}" />
-            <marker date="1272314288000" expanded="true" signature="187237:187307" ph="{...}" />
-            <marker date="1272314288000" expanded="true" signature="187345:187589" ph="..." />
-            <marker date="1272314288000" expanded="true" signature="187367:187589" ph="..." />
-            <marker date="1272314288000" expanded="true" signature="187447:187589" ph="..." />
-            <marker date="1272314288000" expanded="true" signature="187455:187580" ph="..." />
-            <marker date="1272314288000" expanded="true" signature="187798:187884" ph="..." />
-            <marker date="1272314288000" expanded="true" signature="188731:188764" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -557,7 +557,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-164">
           <caret line="943" column="20" selection-start-line="943" selection-start-column="20" selection-end-line="943" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -565,7 +564,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1781">
           <caret line="164" column="33" selection-start-line="164" selection-start-column="33" selection-end-line="164" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -573,53 +571,52 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#99#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/KhaosApi/Client.php" />
+    <entry file="file://$PROJECT_DIR$/SplClassLoader.php" />
+    <entry file="file://$PROJECT_DIR$/Khaostest.php" />
     <entry file="file://$PROJECT_DIR$/classes/BuilderAbstract.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
+        <state relative-caret-position="575">
           <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="32" selection-end-column="38" />
-          <folding>
-            <element signature="e#7#99#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/useless_classes.bkp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-543">
-          <caret line="95" column="44" selection-start-line="95" selection-start-column="44" selection-end-line="95" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="180">
           <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nusoap.php">
+    <entry file="file://$PROJECT_DIR$/useless_classes.bkp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="38" column="50" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
           <folding>
             <element signature="e#6#98#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/idex2.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-          <folding />
+        <state relative-caret-position="615">
+          <caret line="46" column="44" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
+          <folding>
+            <element signature="e#6#98#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
