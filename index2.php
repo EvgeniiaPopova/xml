@@ -41,15 +41,28 @@ try {
                 $data['ref'] = $reader->getAttribute('REF');
                 $data['urn'] = $reader->getAttribute('URN');
 
+
                 $reader->read();
                 if ($reader->nodeType == XMLReader::TEXT) {
                     $data['value'] = $reader->value;
                     $reader->read();
-                print_r($data);
+                    foreach ($data as $item=>$value){
+                        switch($item){
+                            case 'value':
+                                printf('%s = %s %s', $item, $value, PHP_EOL);
+                                break;
+                            default:
+                                echo "{$item}={$value}\n";
+                                break;
+                        }
+                    }
                 }
+                }
+
+
             }
         }
-    }
+
 
 //    print_r ($responseXML);
 } catch (Exception $e) {
