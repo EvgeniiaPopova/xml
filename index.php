@@ -1,56 +1,37 @@
 <?php
-/**
- * Created by:
- * User: Zhenia Popova
- * E-mail: zhenia@avaito.com
- * Date: 05.04.17
- */
+session_start();
+error_reporting(E_ALL);
+include("PFBC/Form.php");
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL & ~E_NOTICE);
-
-try {
-    $context = stream_context_create(array(
-        'ssl' => array(
-            'verify_peer' => false,
-            'verify_peer_name' => false,
-            'allow_self_signed' => true
-        )
-    ));
-
-    $options = array(
-        'exceptions' => 1,
-        'trace' => 1,
-        'encoding' => 'UTF-8',
-        'connection_timeout' => 30,
-        'stream_context' => $context,
-        'location' => 'https://83.218.157.188:443/test/khaosids.exe/soap/IKosWeb',
-        'uri' => 'http://tempuri.org/'
-    );
-    $client = new SoapClient('https://83.218.157.188:443/test/khaosids.exe/wsdl/IKosWeb?wsdl', $options);
-    $responseXML = $client->ExportOrderStatus();
-
-    $p = xml_parser_create();
-    xml_parse_into_struct($p, $responseXML, $vals, $index);
-    xml_parser_free($p);
-    $count = count($vals);
-    for ($i=1;$i<count($vals)-1;$i++) {
-        $orderid = $vals[$i]['attributes']['ID'];
-        $invoice = $vals[$i]['attributes']['INVOICE'];
-        $ref = $vals[$i]['attributes']['REF'];
-        $complete = $vals[$i]['attributes']['COMPLETE'];
-        $urn = $vals[$i]['attributes']['URN'];
-
-        echo "Order ID: {$orderid}</br>\n";
-        echo "Invoice: {$invoice}</br>\n";
-        echo "Ref: {$ref}</br>\n";
-        echo "Complete: {$complete}</br>\n";
-        echo "Urn: {$urn}</br>\n\n\n";
-    }
-//    print_r ($responseXML);
-} catch (Exception $e) {
-    print $e->getMessage();
+if(isset($_POST["form"])) {
+	Form::isValid($_POST["form"]);
+	header("Location: " . $_SERVER["PHP_SELF"]);
+	exit();	
 }
 
+include("header.php");
 
-    
+use PFBC\Form;
+use PFBC\Element;
+$options = array("No", "Yes");
+$form = new Form("ExportOrdersForm");
+$form->configure(array(
+	"prevent" => array("bootstrap", "jQuery", "focus"), 'action'=>'action.php'
+));
+
+$form->addElement(new Element\HTML('<legend>Export Orders Form</legend>'));
+//$form->addElement(new Element\Hidden("form", "login"));
+$form->addElement(new Element\Radio("Is new customer:", "is_new_customers", $options, array("required" => 1)));
+
+//$form->addElement(new Element\Textbox("Is new customer:", 'is_new_customers', array("required" => 1)));
+$form->addElement(new Element\Textbox("Other Ref:", 'other_ref', array("required" => 1)));
+$form->addElement(new Element\Textbox("Company Name:", 'company_name', array("required" => 1)));
+$form->addElement(new Element\Textbox("Web User:", 'web_user', array("required" => 1)));
+$form->addElement(new Element\Textbox("Mailing Status:", 'mailing_status', array("required" => 1)));
+$form->addElement(new Element\Textbox("Company Class:", 'company_class', array("required" => 1)));
+$form->addElement(new Element\Textbox("Company Type:", 'company_type', array("required" => 1)));
+$form->addElement(new Element\Textbox("Company Code:", "company_code", array("required" => 1)));
+$form->addElement(new Element\Button);
+$form->render();
+
+include("footer.php");

@@ -30,6 +30,6 @@ abstract class BuilderAbstract
     {
         $dom = $this->_dom;
         $dom->formatOutput = true;
-        $dom->save('xmlresponse.xml');
+        $dom->save('xmlresponse2.xml');
     }
 }

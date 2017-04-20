@@ -5,28 +5,37 @@
  * E-mail: zhenia@avaito.com
  * Date: 10.04.17
  */
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+require_once "classes/PhpFormBuilder.php";
 
-require __DIR__ . '/vendor/autoload.php';
-require_once __DIR__ . '/vendor/app.php';
+?>
 
-//echo Form::open(['url' => 'foo/bar', 'method' => 'put']);
-//
-//{{ Form::open(array('url' => 'action.php')) }
-////        echo Form::label('email', 'E-Mail Address');
-//{{ Form::text('name', @$name) }}
-//
-//{{ Form::password('password') }}
+    <!DOCTYPE HTML>
+    <html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+    </head>
 
-//{{ Form::submit('Send') }}
-//
-//{{ Form::close() }}
+    <body>
+<?php
 
-{!! Form::open([]) !!}
+$form = new PhpFormBuilder();
+$form->set_att('method', 'post');
+$form->set_att('class', 'form-group');
 
-{!! Form::text('name', @$name) !!}
-
-{!! Form::password('password') !!}
-
-{!! Form::submit('Send') !!}
-
-{!! Form::close() !!}
+$form->add_inputs(array(
+    array('Is new customer'),
+    array('Other Ref'),
+    array('Company Name'),
+    array('Web User'),
+    array('Mailing Status'),
+    array('Company Class'),
+    array('Compane Type'),
+    array('Company Code')
+    ));
+$form->build_form();
+?>
+    </body>
+</html>
