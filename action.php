@@ -11,12 +11,10 @@ define('CUSTOMER_IS_NEW_YES', 'Yes');
 define('CUSTOMER_IS_NEW_NO', 'NO');
 
 switch ($dataArray['is_new_customers']) {
-    case CUSTOMER_IS_NEW_YES:
-        $dataArray['is_new_customers'] = '1';
-        break;
     case CUSTOMER_IS_NEW_NO:
-        $dataArray['is_new_customers'] = '-1';
+        $dataArray['is_new_customers'] = -1;
         break;
+    case CUSTOMER_IS_NEW_YES:
     default:
         $dataArray['is_new_customers'] = '1';
 }
@@ -43,7 +41,6 @@ $order_header = $sales_order->appendChild($dom->createElement('ORDER_HEADER'));
 
 $is_new_customer = $customer_detail->appendChild($dom->createElement('IS_NEW_CUSTOMER'));
 $is_new_customer->appendChild($dom->createTextNode($dataObj->offsetGet('is_new_customers')));
-//var_dump($dataArray['is_new_customers']);
 $other_ref = $customer_detail->appendChild($dom->createElement('OTHER_REF'));
 $other_ref->appendChild($dom->createTextNode($dataArray['other_ref']));
 $company_name = $customer_detail->appendChild($dom->createElement('COMPANY_NAME'));
