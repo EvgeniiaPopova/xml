@@ -46,8 +46,8 @@ try {
                 if ($reader->nodeType == XMLReader::TEXT) {
                     $data['value'] = $reader->value;
                     $reader->read();
-                    foreach ($data as $item=>$value){
-                        switch($item){
+                    foreach ($data as $item => $value) {
+                        switch ($item) {
                             case 'value':
                                 printf('%s = %s %s %s', $item, $value, PHP_EOL, PHP_EOL);
                                 break;
@@ -57,11 +57,11 @@ try {
                         }
                     }
                 }
-                }
-
-
             }
+
+
         }
+    }
 
 
 //    print_r ($responseXML);
