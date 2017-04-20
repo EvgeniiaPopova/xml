@@ -8,19 +8,15 @@
  */
 class CustomerExportBuilder extends BuilderAbstract
 {
-    public function __construct()
-    {
-        parent::__construct();
-    }
     protected function createStructure(ArrayObject $dataObj)
     {
-
         $dom = $this->_dom;
 
         $sales_orders = $dom->appendChild($dom->createElement('SALES_ORDERS'));
 
         $sales_orders_attr = $sales_orders->appendChild($dom->createAttribute('xmlns:xsi'));
         $sales_orders_attr->nodeValue = 'http://www.w3.org/2001/XMLSchema-instance';
+        
         $sales_orders_attrib = $sales_orders->appendChild($dom->createAttribute('xsi:noNamespaceSchemaLocation'));
         $sales_orders_attrib->nodeValue = 'http://www.keystonesoftware.co.uk/xml/KSDXMLImportFormat.xsd';
         $provider_id = $sales_orders->appendChild($dom->createElement('provider_id'));
@@ -141,7 +137,7 @@ class CustomerExportBuilder extends BuilderAbstract
         $security_token_attr = $security_token->appendChild($dom->createAttribute('Last4Digits'));
         $security_token_attr->nodeValue = '1111';
         $security_token->appendChild($dom->createTextNode('cus_ALDIhLOHGGaWnM'));
-
+        //COMMENT
         $order_item = $order_items->appendChild($dom->createElement('ORDER_ITEM'));
         $stock_code = $order_item->appendChild($dom->createElement('STOCK_CODE'));
         $stock_code->appendChild($dom->createTextNode('Q32AQ-00'));
@@ -178,6 +174,7 @@ class CustomerExportBuilder extends BuilderAbstract
         $delivery_tax = $order_header->appendChild($dom->createElement('DELIVERY_TAX'));
         $delivery_tax->appendChild($dom->createTextNode('0.00'));
    }
+
     public function buildXml($name, ArrayObject $dataObj)
     {
         $this->_getDom();

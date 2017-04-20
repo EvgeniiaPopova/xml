@@ -10,11 +10,14 @@
 abstract class BuilderAbstract
 {
     protected $_dom = '';
+
     abstract public function buildXml($name, ArrayObject $dataObj);
+
     public function __construct()
     {
         $this->_dom = new DOMDocument('1.0');
     }
+
     protected function _getDom()
     {
         if (!isset($this->_dom)) {
@@ -22,6 +25,7 @@ abstract class BuilderAbstract
         }
         return $this->_dom;
     }
+
     public function save($name)
     {
         $dom = $this->_dom;

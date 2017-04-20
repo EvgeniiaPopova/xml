@@ -8,6 +8,8 @@
 
 require_once 'classes/BuilderAbstract.php';
 require_once 'classes/CustomerExportBuilder.php';
+require_once 'classes/CustomForm.php';
+
 /** Factory */
 require_once 'classes/ExportFactoryAbstract.php';
 require_once 'classes/XmlExportFactory.php';
@@ -15,14 +17,12 @@ require_once 'classes/XmlExportFactory.php';
 $dataArray = $_POST;
 $dataObj = new ArrayObject($dataArray);
 
-define('CUSTOMER_IS_NEW_YES', 'Yes');
-define('CUSTOMER_IS_NEW_NO', 'NO');
 
 switch ($dataObj->offsetGet('is_new_customers')) {
-    case CUSTOMER_IS_NEW_NO:
+    case CustomForm::CUSTOMER_IS_NEW_NO:
         $dataObj->offsetSet('is_new_customers', -1);
         break;
-    case CUSTOMER_IS_NEW_YES:
+    case CustomForm::CUSTOMER_IS_NEW_YES:
     default:
         $dataObj->offsetSet('is_new_customers', 1);
 }
