@@ -16,7 +16,7 @@ switch ($dataArray['is_new_customers']) {
         break;
     case CUSTOMER_IS_NEW_YES:
     default:
-        $dataArray['is_new_customers'] = '1';
+        $dataArray['is_new_customers'] = 1;
 }
 
 $dataObj = new ArrayObject($dataArray);
