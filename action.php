@@ -7,22 +7,22 @@
  */
 
 $dataArray = $_POST;
+define('CUSTOMER_IS_NEW_YES', 'Yes');
+define('CUSTOMER_IS_NEW_NO', 'NO');
 
 switch ($dataArray['is_new_customers']) {
-    case 'Yes':
-        $dataArray['is_new_customers'] = '1';
+    case CUSTOMER_IS_NEW_NO:
+        $dataArray['is_new_customers'] = -1;
         break;
-    case 'No':
-        $dataArray['is_new_customers']='-1';
-        break;
+    case CUSTOMER_IS_NEW_YES:
     default:
-        $dataArray['is_new_customers'] = '1';
-        break;
+        $dataArray['is_new_customers'] = 1;
 }
-//print_r($dataArray);
-//$dataArray= array('is_new_customers' => '432', 'other_ref' => '332', 'company_name' => '43443', 'web_user' => '343', 'mailing_status' => '35423', 'company_class' => '45432', 'company_type' => '3352', 'company_code' => '45344');
-//$dataObj = new ArrayObject($_POST);
+
+$dataObj = new ArrayObject($dataArray);
+
 $dom = new DOMDocument('1.0');
+$dom->formatOutput = true;
 $sales_orders = $dom->appendChild($dom->createElement('SALES_ORDERS'));
 
 $sales_orders_attr = $sales_orders->appendChild($dom->createAttribute('xmlns:xsi'));
@@ -40,8 +40,7 @@ $order_items = $sales_order->appendChild($dom->createElement('ORDER_ITEMS'));
 $order_header = $sales_order->appendChild($dom->createElement('ORDER_HEADER'));
 
 $is_new_customer = $customer_detail->appendChild($dom->createElement('IS_NEW_CUSTOMER'));
-$is_new_customer->appendChild($dom->createTextNode($dataArray['is_new_customers']));
-//var_dump($dataArray['is_new_customers']);
+$is_new_customer->appendChild($dom->createTextNode($dataObj->offsetGet('is_new_customers')));
 $other_ref = $customer_detail->appendChild($dom->createElement('OTHER_REF'));
 $other_ref->appendChild($dom->createTextNode($dataArray['other_ref']));
 $company_name = $customer_detail->appendChild($dom->createElement('COMPANY_NAME'));
@@ -185,15 +184,11 @@ $delivery_net->appendChild($dom->createTextNode('3.99'));
 $delivery_tax = $order_header->appendChild($dom->createElement('DELIVERY_TAX'));
 $delivery_tax->appendChild($dom->createTextNode('0.00'));
 
-$dom->formatOutput = true;
-//$dom->saveXML();
+
 $date = date("Y-m-d_H:i:s");
-$xmlname='xml'.$date.'.xml';
+$xmlName = sprintf('xml_%s.xml', $date);
 
-if ($dom->save($xmlname)){
-
-    $save = chmod($xmlname, 0777);
-    header("Location: {$xmlname}");
-    exit();
-    }
-//$save=$dom->save($xmlname);
+if ($dom->save($xmlName)) {
+    $save = chmod($xmlName, 0777);
+    header("Location: {$xmlName}");
+}
