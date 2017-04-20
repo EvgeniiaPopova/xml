@@ -12,8 +12,7 @@ class CustomerExportBuilder extends BuilderAbstract
     {
         parent::__construct();
     }
-
-    public function createStructure($dataObj)
+    protected function createStructure(ArrayObject $dataObj)
     {
 
         $dom = $this->_dom;
@@ -178,15 +177,11 @@ class CustomerExportBuilder extends BuilderAbstract
         $delivery_net->appendChild($dom->createTextNode('3.99'));
         $delivery_tax = $order_header->appendChild($dom->createElement('DELIVERY_TAX'));
         $delivery_tax->appendChild($dom->createTextNode('0.00'));
-
-
-    }
-
-    public function buildXml($name, $dataObj)
+   }
+    public function buildXml($name, ArrayObject $dataObj)
     {
         $this->_getDom();
         $this->createStructure($dataObj);
         $this->save($name);
     }
-
 }

@@ -8,9 +8,7 @@
 
 require_once 'classes/BuilderAbstract.php';
 require_once 'classes/CustomerExportBuilder.php';
-
 /** Factory */
-
 require_once 'classes/ExportFactoryAbstract.php';
 require_once 'classes/XmlExportFactory.php';
 
@@ -31,12 +29,11 @@ switch ($dataObj->offsetGet('is_new_customers')) {
 
 $date = date("Y-m-d_H:i:s");
 $xmlName = sprintf('xml_%s.xml', $date);
-
 $factory = new XmlExportFactory();
 $xmlBuilder = $factory->getBuilder('CustomerExport');
 $xmlBuilder->buildXml($xmlName, $dataObj);
 
 if (isset($xmlName)) {
-    $save = chmod($xmlName, 0777);
+    chmod($xmlName, 0777);
     header("Location: {$xmlName}");
 }
