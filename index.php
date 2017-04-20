@@ -31,5 +31,9 @@ $form->addElement(new Element\Textbox("Company Type:", 'company_type', array("re
 $form->addElement(new Element\Textbox("Company Code:", "company_code", array("required" => 1)));
 $form->addElement(new Element\Button);
 $form->render();
-
-include("footer.php");
+?>
+</div>
+</div>
+</div>
+</body>
+</html>
