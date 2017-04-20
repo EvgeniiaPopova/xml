@@ -7,19 +7,20 @@
  */
 
 $dataArray = $_POST;
+$dataObj = new ArrayObject($dataArray);
+
 define('CUSTOMER_IS_NEW_YES', 'Yes');
 define('CUSTOMER_IS_NEW_NO', 'NO');
 
-switch ($dataArray['is_new_customers']) {
+switch ($dataObj->offsetGet('is_new_customers')) {
     case CUSTOMER_IS_NEW_NO:
-        $dataArray['is_new_customers'] = -1;
+        $dataObj->offsetSet('is_new_customers', -1);
         break;
     case CUSTOMER_IS_NEW_YES:
     default:
-        $dataArray['is_new_customers'] = 1;
+        $dataObj->offsetSet('is_new_customers', 1);
 }
 
-$dataObj = new ArrayObject($dataArray);
 
 $dom = new DOMDocument('1.0');
 $dom->formatOutput = true;
