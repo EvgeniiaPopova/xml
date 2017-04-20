@@ -11,7 +11,7 @@ abstract class BuilderAbstract
 {
     protected $_dom = '';
 
-    abstract public function buildXml();
+    abstract public function buildXml($name, $dataObj);
 
     public function __construct()
     {
@@ -26,10 +26,10 @@ abstract class BuilderAbstract
         return $this->_dom;
     }
 
-    public function save()
+    public function save($name)
     {
         $dom = $this->_dom;
         $dom->formatOutput = true;
-        $dom->save('xmlresponse2.xml');
+        $dom->save($name);
     }
 }
