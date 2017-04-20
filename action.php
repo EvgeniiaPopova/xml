@@ -188,7 +188,7 @@ $delivery_tax->appendChild($dom->createTextNode('0.00'));
 $date = date("Y-m-d_H:i:s");
 $xmlName = sprintf('xml_%s.xml', $date);
 
-if ($dom->save($xmlname)) {
-    $save = chmod($xmlname, 0777);
+if ($dom->save($xmlName)) {
+    $save = chmod($xmlName, 0777);
     header("Location: {$xmlName}");
 }
