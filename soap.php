@@ -9,6 +9,7 @@
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL & ~E_NOTICE);
+require_once 'autoloader.php';
 
 try {
     $context = stream_context_create(array(
@@ -19,15 +20,11 @@ try {
         )
     ));
 
-    $options = array(
-        'exceptions' => 1,
-        'trace' => 1,
-        'encoding' => 'UTF-8',
-        'connection_timeout' => 30,
-        'stream_context' => $context,
-        'location' => 'https://83.218.157.188:443/test/khaosids.exe/soap/IKosWeb',
-        'uri' => 'http://tempuri.org/'
-    );
+    $config = new Config('test');
+    $options = $config->getOptions();
+    $options['stream_context'] = $context;
+
+
     $client = new SoapClient('https://83.218.157.188:443/test/khaosids.exe/wsdl/IKosWeb?wsdl', $options);
     $responseXML = $client->ExportOrderStatus();
 
@@ -62,9 +59,6 @@ try {
 
         }
     }
-
-
-//    print_r ($responseXML);
 } catch (Exception $e) {
     print $e->getMessage();
 }

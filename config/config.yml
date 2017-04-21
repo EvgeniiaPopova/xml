@@ -1,0 +1,18 @@
+---
+test:
+  exceptions: 1
+  trace: 1
+  encoding: UTF-8
+  connection_timeout: 30
+  stream_context: false
+  location: https://83.218.157.188:443/test/khaosids.exe/soap/IKosWeb
+  uri: http://tempuri.org/
+prod:
+  exceptions: 1
+  trace: 1
+  encoding: UTF-8
+  connection_timeout: 30
+  stream_context: false
+  location: https://83.218.157.188:443/test/khaosids.exe/soap/IKosWeb
+  uri: http://tempuri.org/
+...
