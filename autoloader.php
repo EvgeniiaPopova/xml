@@ -6,6 +6,8 @@
  * Date: 21.04.17
  */
 
+define('DOCUMENT_ROOT', '/var/www/xml/');
+
 spl_autoload_register ('autoload');
 function autoload($className)
 {

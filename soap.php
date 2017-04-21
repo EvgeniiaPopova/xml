@@ -12,19 +12,8 @@ error_reporting(E_ALL & ~E_NOTICE);
 require_once 'autoloader.php';
 
 try {
-    $config = new Config('test');
+    $config = new ConfigSoap('test');
     $options = $config->getOptions();
-
-    $context = stream_context_create(array(
-        'ssl' => array(
-            'verify_peer' => false,
-            'verify_peer_name' => false,
-            'allow_self_signed' => true
-        )
-    ));
-
-
-    $options['stream_context'] = $context;
 
     $client = new SoapClient('https://83.218.157.188:443/test/khaosids.exe/wsdl/IKosWeb?wsdl', $options);
     $responseXML = $client->ExportOrderStatus();
