@@ -9,7 +9,7 @@
 class Config
 {
     protected $env;
-    protected $pathToConf = 'config/config.yml';
+    protected $pathToConf = '../config/config.yml';
     protected $types = array();
 
     const ENV_TEST = 'test';

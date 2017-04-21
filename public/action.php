@@ -6,7 +6,7 @@
  * Date: 29.03.17
  */
 
-require_once 'autoloader.php';
+require_once '../autoloader.php';
 
 $dataArray = $_POST;
 $dataObj = new ArrayObject($dataArray);

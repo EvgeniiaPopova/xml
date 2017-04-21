@@ -9,13 +9,14 @@
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL & ~E_NOTICE);
-require_once 'autoloader.php';
+require_once '../autoloader.php';
 
 try {
     $config = new ConfigSoap('test');
     $options = $config->getOptions();
+    $wsdl = $config->getWsdl();
 
-    $client = new SoapClient('https://83.218.157.188:443/test/khaosids.exe/wsdl/IKosWeb?wsdl', $options);
+    $client = new SoapClient($wsdl, $options);
     $responseXml = $client->ExportOrderStatus();
 
     $parser = new ParserXml();

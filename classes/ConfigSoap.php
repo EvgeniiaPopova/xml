@@ -8,6 +8,11 @@
  */
 class ConfigSoap extends Config
 {
+    public function getWsdl()
+    {
+        $wsdl = 'https://83.218.157.188:443/test/khaosids.exe/wsdl/IKosWeb?wsdl';
+        return $wsdl;
+    }
     public function getOptions()
     {
         $options = parent::getOptions();
