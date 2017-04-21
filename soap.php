@@ -12,6 +12,9 @@ error_reporting(E_ALL & ~E_NOTICE);
 require_once 'autoloader.php';
 
 try {
+    $config = new Config('test');
+    $options = $config->getOptions();
+
     $context = stream_context_create(array(
         'ssl' => array(
             'verify_peer' => false,
@@ -20,8 +23,7 @@ try {
         )
     ));
 
-    $config = new Config('test');
-    $options = $config->getOptions();
+
     $options['stream_context'] = $context;
 
     $client = new SoapClient('https://83.218.157.188:443/test/khaosids.exe/wsdl/IKosWeb?wsdl', $options);
