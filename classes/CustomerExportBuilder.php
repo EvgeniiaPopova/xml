@@ -16,7 +16,7 @@ class CustomerExportBuilder extends BuilderAbstract
 
         $sales_orders_attr = $sales_orders->appendChild($dom->createAttribute('xmlns:xsi'));
         $sales_orders_attr->nodeValue = 'http://www.w3.org/2001/XMLSchema-instance';
-        
+
         $sales_orders_attrib = $sales_orders->appendChild($dom->createAttribute('xsi:noNamespaceSchemaLocation'));
         $sales_orders_attrib->nodeValue = 'http://www.keystonesoftware.co.uk/xml/KSDXMLImportFormat.xsd';
         $provider_id = $sales_orders->appendChild($dom->createElement('provider_id'));
@@ -173,7 +173,7 @@ class CustomerExportBuilder extends BuilderAbstract
         $delivery_net->appendChild($dom->createTextNode('3.99'));
         $delivery_tax = $order_header->appendChild($dom->createElement('DELIVERY_TAX'));
         $delivery_tax->appendChild($dom->createTextNode('0.00'));
-   }
+    }
 
     public function buildXml($name, ArrayObject $dataObj)
     {

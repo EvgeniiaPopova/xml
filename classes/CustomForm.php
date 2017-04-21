@@ -9,7 +9,6 @@
 
 require_once '/var/www/xml/vendor/autoload.php';
 
-
 class CustomForm
 {
     const CUSTOMER_IS_NEW_YES = 'Yes';
@@ -38,6 +37,5 @@ class CustomForm
         $form->addElement(new PFBC\Element\Textbox("Company Code:", "company_code", array("required" => 1)));
         $form->addElement(new PFBC\Element\Button);
         return $form->render();
-
     }
 }
