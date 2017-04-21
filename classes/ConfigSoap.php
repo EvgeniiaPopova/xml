@@ -8,11 +8,19 @@
  */
 class ConfigSoap extends Config
 {
+    const WSDL_LOCATION = 'location';
+
+    /**
+     * @return string
+     * @todo ADD SOME LOGIC
+     */
     public function getWsdl()
     {
-        $wsdl = 'https://83.218.157.188:443/test/khaosids.exe/wsdl/IKosWeb?wsdl';
+        $options = $this->getOptions();
+        $wsdl = $options[self::WSDL_LOCATION];
         return $wsdl;
     }
+
     public function getOptions()
     {
         $options = parent::getOptions();

@@ -40,6 +40,10 @@ class Config
         return $this->env;
     }
 
+    /**
+     * @return array
+     * @todo STORE OPTIONS
+     */
     public function getOptions()
     {
         $typeEnv = $this->getEnv();
