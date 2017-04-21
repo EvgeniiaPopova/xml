@@ -19,5 +19,6 @@ class ConfigSoap extends Config
             )
         ));
         $options['stream_context'] = $context;
+        return $options;
     }
 }

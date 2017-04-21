@@ -16,36 +16,11 @@ try {
     $options = $config->getOptions();
 
     $client = new SoapClient('https://83.218.157.188:443/test/khaosids.exe/wsdl/IKosWeb?wsdl', $options);
-    $responseXML = $client->ExportOrderStatus();
+    $responseXml = $client->ExportOrderStatus();
 
-    $reader = new XMLReader();
-    $reader->XML($responseXML, NULL, 0);
-    while ($reader->read()) {
-        if ($reader->nodeType == XMLReader::ELEMENT) {
-            if ($reader->localName == 'ORDER') {
-                $data = array();
-                $data['id'] = $reader->getAttribute('ID');
-                $data['ref'] = $reader->getAttribute('REF');
-                $data['urn'] = $reader->getAttribute('URN');
+    $parser = new ParserXml();
+    $parser->readXml($responseXml);
 
-                $reader->read();
-                if ($reader->nodeType == XMLReader::TEXT) {
-                    $data['value'] = $reader->value;
-                    $reader->read();
-                    foreach ($data as $item => $value) {
-                        switch ($item) {
-                            case 'value':
-                                printf('%s = %s %s %s', $item, $value, PHP_EOL, PHP_EOL);
-                                break;
-                            default:
-                                printf('%s=%s %s', $item, $value, PHP_EOL);
-                                break;
-                        }
-                    }
-                }
-            }
-        }
-    }
 } catch (Exception $e) {
     print $e->getMessage();
 }
