@@ -1,3 +1,7 @@
+<?php
+session_start();
+require_once 'classes/CustomForm.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,8 +44,8 @@
         </div>
         <div class="span9">
             <?php
-            session_start();
-            require_once 'form.php';
+                $form = new CustomForm();
+                $form->generate($_POST);
             ?>
         </div>
     </div>

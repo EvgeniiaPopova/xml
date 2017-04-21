@@ -9,20 +9,25 @@
 
 require_once '/var/www/xml/vendor/autoload.php';
 
-class CustomForm
+class CustomForm extends stdClass
 {
     const CUSTOMER_IS_NEW_YES = 'Yes';
     const CUSTOMER_IS_NEW_NO = 'No';
 
-    function generateForm()
+    protected $_form;
+
+    public static function validate($dataArray)
     {
-        if (isset($_POST["form"])) {
-            PFBC\Form::isValid($_POST["form"]);
-            header("Location: " . $_SERVER["PHP_SELF"]);
-            exit();
+        if (isset($dataArray)) {
+            if (PFBC\Form::isValid($dataArray)) {
+                throw new Exception('bla ba bla');
+            }
         }
-        $form=new PFBC\Form("ExportOrdersForm");
-//        $form = $this->_form;
+    }
+
+    function generate()
+    {
+        $form = $this->getForm();
         $form->configure(array(
             "prevent" => array("bootstrap", "jQuery", "focus"), 'action' => 'action.php'));
         $options = array(self::CUSTOMER_IS_NEW_YES, self::CUSTOMER_IS_NEW_NO);
@@ -37,5 +42,24 @@ class CustomForm
         $form->addElement(new PFBC\Element\Textbox("Company Code:", "company_code", array("required" => 1)));
         $form->addElement(new PFBC\Element\Button);
         return $form->render();
+    }
+
+    /**
+     * @param \PFBC\Form $form
+     */
+    public function setForm(\PFBC\Form $form)
+    {
+        $this->_form = $form;
+    }
+
+    /**
+     * @return \PFBC\Form
+     */
+    public function getForm()
+    {
+        if (empty($this->form)) {
+            $this->setForm(new \PFBC\Form("ExportOrdersForm"));
+        }
+        return $this->_form;
     }
 }
