@@ -10,6 +10,7 @@ class CustomerExportBuilder extends BuilderAbstract
 {
     protected function createStructure(ArrayObject $dataObj)
     {
+
         $dom = $this->_dom;
 
         $sales_orders = $dom->appendChild($dom->createElement('SALES_ORDERS'));
