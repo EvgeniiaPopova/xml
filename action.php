@@ -6,13 +6,7 @@
  * Date: 29.03.17
  */
 
-require_once 'classes/BuilderAbstract.php';
-require_once 'classes/CustomerExportBuilder.php';
-require_once 'classes/CustomForm.php';
-
-/** Factory */
-require_once 'classes/ExportFactoryAbstract.php';
-require_once 'classes/XmlExportFactory.php';
+require_once 'autoloader.php';
 
 $dataArray = $_POST;
 $dataObj = new ArrayObject($dataArray);

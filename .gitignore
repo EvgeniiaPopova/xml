@@ -6,6 +6,7 @@
 *.exe
 *.o
 *.so
+*.xml
 
 # Packages #
 ############
@@ -39,3 +40,5 @@ Thumbs.db
 # Directories #
 ###############
 .idea/
+/git
+/composer.phar

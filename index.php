@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'classes/CustomForm.php';
+require_once 'autoloader.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +45,7 @@ require_once 'classes/CustomForm.php';
         <div class="span9">
             <?php
                 $form = new CustomForm();
-                $form->generate($_POST);
+                $form->generate();
             ?>
         </div>
     </div>
