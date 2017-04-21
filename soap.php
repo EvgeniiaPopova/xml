@@ -24,7 +24,6 @@ try {
     $options = $config->getOptions();
     $options['stream_context'] = $context;
 
-
     $client = new SoapClient('https://83.218.157.188:443/test/khaosids.exe/wsdl/IKosWeb?wsdl', $options);
     $responseXML = $client->ExportOrderStatus();
 
@@ -37,7 +36,6 @@ try {
                 $data['id'] = $reader->getAttribute('ID');
                 $data['ref'] = $reader->getAttribute('REF');
                 $data['urn'] = $reader->getAttribute('URN');
-
 
                 $reader->read();
                 if ($reader->nodeType == XMLReader::TEXT) {
@@ -55,8 +53,6 @@ try {
                     }
                 }
             }
-
-
         }
     }
 } catch (Exception $e) {
