@@ -6,7 +6,7 @@
  * E-mail: zhenia@avaito.com
  * Date: 21.04.17
  */
-class Config extends stdClass
+class Config
 {
     protected $env;
     protected $pathToConf = 'config/config.yml';

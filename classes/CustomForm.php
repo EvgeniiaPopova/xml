@@ -9,7 +9,7 @@
 
 require_once '/var/www/xml/vendor/autoload.php';
 
-class CustomForm extends stdClass
+class CustomForm
 {
     const CUSTOMER_IS_NEW_YES = 'Yes';
     const CUSTOMER_IS_NEW_NO = 'No';
