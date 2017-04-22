@@ -186,7 +186,6 @@ function parseFunction(onclick) {
 	var formObj = document.forms[0];
 	var onClickData = parseLink(onclick);
 
-	// TODO: Add stuff here
 }
 
 function getOption(opts, name) {
