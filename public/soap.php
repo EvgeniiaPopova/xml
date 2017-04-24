@@ -9,7 +9,7 @@
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL & ~E_NOTICE);
-/** @todo remove hard coded path + */
+/** @TODO WHY HERE WAS A PLUS??? DID YOU REMOVE HARDCODED PATH????? */
 require_once '/var/www/xml/vendor/autoload.php';
 
 use \Generate\Soap\ConfigSoap as ConfigSoap;

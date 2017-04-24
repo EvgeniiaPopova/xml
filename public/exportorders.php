@@ -6,7 +6,7 @@
  * Date: 21.04.17
  */
 
-/** @todo remove hard coded path + */
+/** @TODO WHT HERE WAS PLUS? DID YOU REMOVE HARDCODED PATH???? */
 session_start();
 require_once '/var/www/xml/vendor/autoload.php';
 require_once 'header.php';
