@@ -10,7 +10,6 @@
 namespace Generate\Xml;
 
 use Generate\BuilderAbstract;
-use Generate\Form\CustomForm;
 
 class CustomerExportBuilder extends BuilderAbstract
 {
@@ -196,18 +195,6 @@ class CustomerExportBuilder extends BuilderAbstract
     {
         $this->name = $name;
     }
-
-//    /**
-//     * @return mixed
-//     */
-//    public function getName()
-//    {
-//        if (empty($this->name)) {
-//            $date = date("Y-m-d_H:i:s");
-//            $this->setName("xml_{$date}.xml");
-//        }
-//        return $this->name;
-//    }
 
     /**
      * @param string $name Name of XML file
