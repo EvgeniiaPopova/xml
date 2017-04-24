@@ -13,11 +13,11 @@ use \Generate\Config;
 
 class ConfigSoap extends Config
 {
+    /** @const Path alias for WSDL url in config */
     const WSDL_LOCATION = 'location';
 
     /**
      * @return string
-     * @todo ADD SOME LOGIC
      */
     public function getWsdl()
     {
@@ -26,6 +26,9 @@ class ConfigSoap extends Config
         return $wsdl;
     }
 
+    /**
+     * @return array
+     */
     public function getOptions()
     {
         $options = parent::getOptions();

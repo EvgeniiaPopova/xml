@@ -13,6 +13,10 @@ use Generate\BuilderAbstract;
 
 class CustomerExportBuilder extends BuilderAbstract 
 {
+    /**
+     * @todo use getter for DOM object. Add comments to code for logic separation
+     * @param \ArrayObject $dataObj
+     */
     protected function createStructure(\ArrayObject $dataObj)
     {
         $dom = $this->_dom;
@@ -180,6 +184,11 @@ class CustomerExportBuilder extends BuilderAbstract
         $delivery_tax->appendChild($dom->createTextNode('0.00'));
     }
 
+    /**
+     * @todo add argument $name type
+     * @param $name
+     * @param \ArrayObject $dataObj
+     */
     public function buildXml($name, \ArrayObject $dataObj)
     {
         $this->_getDom();

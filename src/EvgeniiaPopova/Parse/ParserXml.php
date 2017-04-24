@@ -11,6 +11,7 @@ namespace Parse\Xml;
 
 class Parser
 {
+    /** @todo Where is method's access modifier?????. Decompose logic */
     function readXml($responseXml)
     {
         $reader = new \XMLReader();

@@ -9,6 +9,7 @@
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL & ~E_NOTICE);
+/** @todo remove hard coded path */
 require_once '/var/www/xml/vendor/autoload.php';
 
 try {

@@ -10,6 +10,9 @@ namespace Generate;
 
 class Config
 {
+    /**
+     * @todo add PHPDoc blocks for properties, methods and constants
+     */
     protected $env;
     protected $pathToConf = '../config/config.yml';
     protected $types = array();

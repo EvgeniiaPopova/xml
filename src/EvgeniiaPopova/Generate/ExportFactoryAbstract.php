@@ -9,6 +9,11 @@
 
 namespace Generate;
 
+/**
+ * @todo add PHPDoc block for method and type hints
+ * Class ExportFactoryAbstract
+ * @package Generate
+ */
 abstract class ExportFactoryAbstract
 {
     abstract public function getBuilder($type);

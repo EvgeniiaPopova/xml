@@ -9,6 +9,11 @@
 
 namespace Generate;
 
+/**
+ * @todo rename properties and methods regarding PSR-1
+ * Class BuilderAbstract
+ * @package Generate
+ */
 abstract class BuilderAbstract
 {
     protected $_dom = '';
