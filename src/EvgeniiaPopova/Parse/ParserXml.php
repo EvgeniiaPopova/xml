@@ -49,7 +49,7 @@ class Xml
          */
     }
 
-    function readXml($responseXml)
+    public function readXml($responseXml)
     {
         $reader = $this->getReader();
         $reader->XML($responseXml, NULL, 0);

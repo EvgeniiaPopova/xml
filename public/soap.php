@@ -24,7 +24,7 @@ try {
     $client = new SoapClient($wsdl, $options);
     $responseXml = $client->ExportOrderStatus();
 
-    $parser = new \Parser();
+    $parser = new Parser();
     $parser->readXml($responseXml);
 
 } catch (Exception $e) {

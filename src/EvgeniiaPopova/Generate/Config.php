@@ -22,10 +22,8 @@ class Config
     protected $pathToConf = '../config/config.yml';
     /** @var array $types list of environment types */
     protected $types = array();
-    /**
-     * @var string $typeEnv
-     */
-    protected $typeEnv;
+    /** * @var array $options */
+    protected $options;
 
     /**#@+
      * Config const
@@ -90,4 +88,3 @@ class Config
         return $options[$env];
     }
 }
-
