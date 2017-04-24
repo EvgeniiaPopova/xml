@@ -10,9 +10,11 @@
 namespace Generate\Xml;
 
 use Generate\BuilderAbstract;
+use Generate\Form\CustomForm;
 
-class CustomerExportBuilder extends BuilderAbstract 
+class CustomerExportBuilder extends BuilderAbstract
 {
+    public $name;
     /**
      * @todo Add comments to code for logic separation +
      * @param \ArrayObject $dataObj
@@ -197,3 +199,4 @@ class CustomerExportBuilder extends BuilderAbstract
         $this->save($name);
     }
 }
+

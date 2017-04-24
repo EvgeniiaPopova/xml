@@ -7,28 +7,33 @@
  * Date: 21.04.17
  */
 
-/**
- * @property string $env type of environment
- * @property  string $pathToConf Path to config
- * @property array $types list of types
- */
 namespace Generate;
 
 class Config
 {
     /**
-     * @TODO Please if you don't know how to use PHPDoc - read documentation.
+     * @TODO Please if you don't know how to use PHPDoc - read documentation. +
      * Properties PHPDoc blocks are in wrong place
      */
 
+    /** @var string $env Current env type */
     protected $env;
+    /** @var string $pathToConf Path to config file */
     protected $pathToConf = '../config/config.yml';
+    /** @var array $types list of environment types */
     protected $types = array();
+    /**
+     * @var string $typeEnv
+     */
+    protected $typeEnv;
 
-    /**@#+ Config const */
+    /**#@+
+     * Config const
+     * @var string
+     */
     const ENV_TEST = 'test';
     const ENV_PROD = 'prod';
-    /**@#- */
+    /**#@-*/
 
     /**
      * Config constructor.
@@ -74,13 +79,15 @@ class Config
 
     /**
      * @return array
-     * @todo STORE OPTIONS
+     * @todo STORE OPTIONS +-?
      */
     public function getOptions()
     {
-        $typeEnv = $this->getEnv();
-        $options = yaml_parse_file($this->pathToConf);
-        return $options[$typeEnv];
+        $env = $this->getEnv();
+        if (empty($options)) {
+            $options = yaml_parse_file($this->pathToConf);
+        }
+        return $options[$env];
     }
 }
 

@@ -49,9 +49,8 @@ class CustomForm
     function generate()
     {
         $form = $this->getForm();
-        /** @TODO Better define getter and then use it here */
-        $config = $this->configure;
-
+        /** @TODO Better define getter and then use it here +? */
+        $config = $this->getConfigure();
         $form->configure($config);
         $options = array(self::CUSTOMER_IS_NEW_YES, self::CUSTOMER_IS_NEW_NO);
         $form->addElement(new Element\HTML('<legend>Export Orders Form</legend>'));
@@ -68,11 +67,11 @@ class CustomForm
     }
 
     /**
-     * @TODO not the best naming for method
-     * @return \ArrayObject $dataObj
+     * @TODO not the best naming for method +
      * @param \ArrayObject $dataObj
+     * @return \ArrayObject
      */
-    public function determinateCustomer(\ArrayObject $dataObj)
+    public static function determinateCustomer(\ArrayObject $dataObj)
     {
         switch ($dataObj->offsetGet('is_new_customers')) {
             case self::CUSTOMER_IS_NEW_NO:
@@ -82,6 +81,7 @@ class CustomForm
             default:
                 $dataObj->offsetSet('is_new_customers', 1);
         }
+        return $dataObj;
     }
 
     /**
@@ -101,5 +101,10 @@ class CustomForm
             $this->setForm(new Form("ExportOrdersForm"));
         }
         return $this->form;
+    }
+
+    public function getConfigure()
+    {
+        return $this->configure;
     }
 }
