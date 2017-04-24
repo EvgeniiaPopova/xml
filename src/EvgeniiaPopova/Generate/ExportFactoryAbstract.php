@@ -16,9 +16,9 @@ namespace Generate;
 abstract class ExportFactoryAbstract
 {
     /**
-     * @TODO Where you see what kind of object or value will return this method?
+     * @TODO Where you see what kind of object or value will return this method? +?
      * @param string $type Xml type method
-     * @return mixed
+     * @return Xml\
      */
     abstract public function getBuilder($type);
 }
