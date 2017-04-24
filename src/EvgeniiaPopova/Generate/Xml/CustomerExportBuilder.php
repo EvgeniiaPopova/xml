@@ -14,7 +14,7 @@ use Generate\BuilderAbstract;
 class CustomerExportBuilder extends BuilderAbstract 
 {
     /**
-     * @todo Add comments to code for logic separation
+     * @todo Add comments to code for logic separation +
      * @param \ArrayObject $dataObj
      */
     protected function createStructure(\ArrayObject $dataObj)
@@ -33,7 +33,7 @@ class CustomerExportBuilder extends BuilderAbstract
         $provider_id->appendChild($dom->createTextNode('khaos'));
 
         $sales_order = $sales_orders->appendChild($dom->createElement('SALES_ORDER'));
-        //I was meaning: Customer details element
+        //Customer details element
         $customer_detail = $sales_order->appendChild($dom->createElement('CUSTOMER_DETAIL'));
         $payments = $sales_order->appendChild($dom->createElement('PAYMENTS'));
         //Order items elements
@@ -59,12 +59,11 @@ class CustomerExportBuilder extends BuilderAbstract
         $company_code->appendChild($dom->createTextNode($dataObj->offsetGet('company_code')));
         $optin_newsletter = $customer_detail->appendChild($dom->createElement('OPTIN_NEWSLETTER'));
         $optin_newsletter->appendChild($dom->createTextNode('-1'));
-        //Addresses and so on
+        //Addresses block
         $addresses = $customer_detail->appendChild($dom->createElement('ADDRESSES'));
-
         $deladdr = $addresses->appendChild($dom->createElement('DELADDR'));
         $invaddr = $addresses->appendChild($dom->createElement('INVADDR'));
-
+        //Default Adresses block
         $daddress1 = $deladdr->appendChild($dom->createElement('DADDRESS1'));
         $daddress1->appendChild($dom->createTextNode('qwerqwer'));
         $daddress2 = $deladdr->appendChild($dom->createElement('DADDRESS2'));
@@ -89,7 +88,7 @@ class CustomerExportBuilder extends BuilderAbstract
         $dmobile = $deladdr->appendChild($dom->createElement('DMOBILE'));
         $demail = $deladdr->appendChild($dom->createElement('DEMAIL'));
         $demail->appendChild($dom->createTextNode('mailalexslv@gmail.com'));
-
+        //I Adresses Block
         $iaddress1 = $invaddr->appendChild($dom->createElement('IADDRESS1'));
         $iaddress1->appendChild($dom->createTextNode('qwerqwer'));
         $iaddress2 = $invaddr->appendChild($dom->createElement('IADDRESS2'));
@@ -114,9 +113,8 @@ class CustomerExportBuilder extends BuilderAbstract
         $imobile = $invaddr->appendChild($dom->createElement('IMOBILE'));
         $iemail = $invaddr->appendChild($dom->createElement('IEMAIL'));
         $iemail->appendChild($dom->createTextNode('mailalexslv@gmail.com'));
-
+        //Payment Detail Block
         $payment_detail = $payments->appendChild($dom->createElement('PAYMENT_DETAIL'));
-
         $payment_amount = $payment_detail->appendChild($dom->createElement('PAYMENT_AMOUNT'));
         $payment_amount->appendChild($dom->createTextNode('25.94'));
         $payment_type = $payment_detail->appendChild($dom->createElement('PAYMENT_TYPE'));
@@ -150,7 +148,7 @@ class CustomerExportBuilder extends BuilderAbstract
         $security_token_attr = $security_token->appendChild($dom->createAttribute('Last4Digits'));
         $security_token_attr->nodeValue = '1111';
         $security_token->appendChild($dom->createTextNode('cus_ALDIhLOHGGaWnM'));
-        //COMMENT
+        //Order Item  Block
         $order_item = $order_items->appendChild($dom->createElement('ORDER_ITEM'));
         $stock_code = $order_item->appendChild($dom->createElement('STOCK_CODE'));
         $stock_code->appendChild($dom->createTextNode('Q32AQ-00'));
@@ -162,7 +160,7 @@ class CustomerExportBuilder extends BuilderAbstract
         $order_qty->appendChild($dom->createTextNode('1'));
         $price_net = $order_item->appendChild($dom->createElement('PRICE_NET'));
         $price_net->appendChild($dom->createTextNode('21.95'));
-
+        //Order Header Block
         $associated_ref = $order_header->appendChild($dom->createElement('ASSOCIATED_REF'));
         $associated_ref->appendChild($dom->createTextNode('ASSOCIATED_REF'));
         $order_date = $order_header->appendChild($dom->createElement('ORDER_DATE'));
