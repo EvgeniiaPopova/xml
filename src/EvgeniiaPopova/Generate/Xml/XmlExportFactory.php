@@ -13,8 +13,16 @@ use Generate\ExportFactoryAbstract;
 
 class XmlExportFactory extends ExportFactoryAbstract
 {
+    /**
+     * @todo add constant description with PHPDoc
+     */
     const XML_CUSTOMER_EXPORT = 'CustomerExport';
 
+    /**
+     * @todo add argument type
+     * @param $type
+     * @return CustomerExportBuilder
+     */
     public function getBuilder($type)
     {
         switch ($type) {

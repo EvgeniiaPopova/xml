@@ -24,3 +24,4 @@
     <script src="prettify/prettify.js"></script>
 </head>
 <body onload="prettyPrint()">
+<?php /** @todo where body tag is closing? */?>

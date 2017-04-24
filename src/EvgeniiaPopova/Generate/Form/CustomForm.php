@@ -14,11 +14,21 @@ use PFBC\Element as Element;
 
 class CustomForm
 {
+    /**@#+ Form constants */
     const CUSTOMER_IS_NEW_YES = 'Yes';
     const CUSTOMER_IS_NEW_NO = 'No';
+    /**@#- */
 
+    /**
+     * @var
+     */
     protected $_form;
 
+    /**
+     * @todo add argument type
+     * @param $dataArray
+     * @throws \Exception
+     */
     public static function validate($dataArray)
     {
         if (isset($dataArray)) {
@@ -28,6 +38,10 @@ class CustomForm
         }
     }
 
+    /**
+     * @todo move form configure setting to class property
+     * @return string
+     */
     function generate()
     {
         $form = $this->getForm();

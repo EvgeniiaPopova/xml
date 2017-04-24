@@ -7,6 +7,7 @@
  */
 
 session_start();
+/** @todo remove hard coded path */
 require_once '/var/www/xml/vendor/autoload.php';
 require_once 'header.php';
 
