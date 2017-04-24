@@ -23,10 +23,12 @@ class Config
     protected $pathToConf = '../config/config.yml';
     protected $types = array();
 
-    /**#@+ Config const */
+    /**#@+
+    * Config const 
+    */
     const ENV_TEST = 'test';
     const ENV_PROD = 'prod';
-    /**#@- */
+    /**#@-*/
 
     /**
      * Config constructor.
