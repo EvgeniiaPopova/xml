@@ -14,10 +14,12 @@ use PFBC\Element as Element;
 
 class CustomForm
 {
-    /**@#+ Form constants */
+    /**#@+
+     * Form constants
+     */
     const CUSTOMER_IS_NEW_YES = 'Yes';
     const CUSTOMER_IS_NEW_NO = 'No';
-    /**@#- */
+    /**#@-*/
 
     /**
      * @var

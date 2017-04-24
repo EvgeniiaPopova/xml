@@ -14,9 +14,8 @@ use Generate\ExportFactoryAbstract;
 class XmlExportFactory extends ExportFactoryAbstract
 {
     /**
-     *
-     * @TODO Please don't just repeat my code +
-     * Operator @#+/- using only for multiple similar constants.
+     * @TODO Please don't just repeat my code.
+     * Operator #@+/- using only for multiple similar constants.
      * Below is example how it should be done in case if we have 1 constant.
      * DON'T FORGET ABOUT NEW LINE AT THE END OF THE FILE +
      */
