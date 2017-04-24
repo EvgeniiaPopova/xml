@@ -10,7 +10,8 @@
 namespace Generate;
 
 /**
- * @todo rename properties and methods regarding PSR-1 +
+ * @TODO Why here was plus if var $dom hasn't PHPDoc????? Let alone other methods????
+ *
  * Class BuilderAbstract
  * @package Generate
  */

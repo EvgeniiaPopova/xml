@@ -11,7 +11,8 @@ namespace Generate;
 class Config
 {
     /**
-     * @todo add PHPDoc blocks for properties, methods and constants  +
+     * @TODO Please if you don't know how to use PHPDoc - read documentation.
+     * Properties PHPDoc blocks are in wrong place
      */
 
     /** @var string $env type of environment */
@@ -38,6 +39,7 @@ class Config
     }
 
     /**
+     * @TODO What type of $env?
      * @param $env
      * @return bool
      */
@@ -47,6 +49,7 @@ class Config
     }
 
     /**
+     * @TODO What type of $env?
      * @param $env
      * @throws \Exception
      */

@@ -9,6 +9,7 @@
 
 namespace Parse\Xml;
 
+/** @TODO bad naming for class - namespace has one value and class has another */
 class Parser
 {
     /** @todo Where is method's access modifier?????. Decompose logic */
@@ -24,7 +25,7 @@ class Parser
     }
 
     /**
-     * @return mixed
+     * @return \XMLReader
      */
     public function getReader()
     {
@@ -34,10 +35,15 @@ class Parser
         return $this->reader;
     }
 
+    /**
+     * @TODO where method access modifier???
+     * @param $responseXml
+     */
     function readXml($responseXml)
     {
         $reader = $this->getReader();
         $reader->XML($responseXml, NULL, 0);
+        /** @TODO At the moment don't understand what is going on here */
         while ($reader->read()) {
             if ($reader->nodeType == \XMLReader::ELEMENT) {
                 if ($reader->localName == 'ORDER') {

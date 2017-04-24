@@ -15,15 +15,16 @@ class XmlExportFactory extends ExportFactoryAbstract
 {
     /**
      *
-     * @todo add constant description with PHPDoc +
+     * @TODO Please don't just repeat my code.
+     * Operator @#+/- using only for multiple similar constants.
+     * Below is example how it should be done in case if we have 1 constant.
+     * DON'T FORGET ABOUT NEW LINE AT THE END OF THE FILE
      */
 
-    /**@#+ Xml TYpe Method Constant */
+    /** @const Xml Type Method Constant */
     const XML_CUSTOMER_EXPORT = 'CustomerExport';
-    /**@#- */
 
     /**
-     * @todo add argument type +
      * @param string $type
      * @return CustomerExportBuilder
      */
