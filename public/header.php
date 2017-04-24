@@ -1,3 +1,4 @@
+<? require_once '/var/www/xml/vendor/autoload.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
