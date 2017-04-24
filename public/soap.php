@@ -14,7 +14,7 @@ $path = dirname(dirname(__FILE__));
 require_once($path . '/vendor/autoload.php');
 
 use \Generate\Soap\ConfigSoap as ConfigSoap;
-use \Parse\Xml\Parser as Parser;
+use \Parse\Xml\Xml as Parser;
 
 try {
     $config = new ConfigSoap('test');
@@ -24,7 +24,7 @@ try {
     $client = new SoapClient($wsdl, $options);
     $responseXml = $client->ExportOrderStatus();
 
-    $parser = new Parser();
+    $parser = new \Parser();
     $parser->readXml($responseXml);
 
 } catch (Exception $e) {

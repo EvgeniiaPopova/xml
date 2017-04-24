@@ -10,12 +10,12 @@
 namespace Parse\Xml;
 
 /** @TODO bad naming for class - namespace has one value and class has another + */
-class Parse
+class Xml
 {
     /** @todo Where is method's access modifier?????. Decompose logic */
 
     public $reader;
-    protected $returnRows;
+    protected $resultRows;
 
     /**
      * Set $reader object
