@@ -10,13 +10,13 @@
 namespace Generate;
 
 /**
- * @todo add PHPDoc block for method and type hints +
  * Class ExportFactoryAbstract
  * @package Generate
  */
 abstract class ExportFactoryAbstract
 {
     /**
+     * @TODO Where you see what kind of object or value will return this method?
      * @param string $type Xml type method
      * @return mixed
      */

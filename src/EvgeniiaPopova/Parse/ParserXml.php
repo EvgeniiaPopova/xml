@@ -9,6 +9,7 @@
 
 namespace Parse\Xml;
 
+/** @TODO bad naming for class - namespace has one value and class has another */
 class Parser
 {
     /** @todo Where is method's access modifier?????. Decompose logic */
@@ -37,55 +38,50 @@ class Parser
         return $this->reader;
     }
 
+
     public function generateArrays($reader)
     {
-        while ($reader->read()) {
-            if ($reader->nodeType == \XMLReader::ELEMENT) {
-                if ($reader->localName == 'ORDER') {
-                    $data = array();
-                    $data['id'] = $reader->getAttribute('ID');
-                    $data['ref'] = $reader->getAttribute('REF');
-                    $data['urn'] = $reader->getAttribute('URN');
 
-                    $reader->read();
-                    if ($reader->nodeType == \XMLReader::TEXT) {
-                        $data['value'] = $reader->value;
+        /**
+         * @TODO where method access modifier???
+         * @param $responseXml
+         */}
+        function readXml($responseXml)
+        {
+            $reader = $this->getReader();
+            $reader->XML($responseXml, NULL, 0);
+            /** @TODO At the moment don't understand what is going on here */
+
+            while ($reader->read()) {
+                if ($reader->nodeType == \XMLReader::ELEMENT) {
+                    if ($reader->localName == 'ORDER') {
+                        $data = array();
+                        $data['id'] = $reader->getAttribute('ID');
+                        $data['ref'] = $reader->getAttribute('REF');
+                        $data['urn'] = $reader->getAttribute('URN');
+
                         $reader->read();
-                        foreach ($data as $item => $value) {
-                            switch ($item) {
-                                case 'value':
-                                    printf('%s = %s %s %s', $item, $value, PHP_EOL, PHP_EOL);
-                                    break;
-                                default:
-                                    printf('%s=%s %s', $item, $value, PHP_EOL);
-                                    break;
+                        if ($reader->nodeType == \XMLReader::TEXT) {
+                            $data['value'] = $reader->value;
+                            $reader->read();
+                            foreach ($data as $item => $value) {
+                                switch ($item) {
+                                    case 'value':
+                                        printf('%s = %s %s %s', $item, $value, PHP_EOL, PHP_EOL);
+                                        break;
+                                    default:
+                                        printf('%s=%s %s', $item, $value, PHP_EOL);
+                                        break;
+                                }
                             }
                         }
                     }
                 }
             }
         }
-    }
-
-    public function readXml($responseXml)
-    {
-        $reader = $this->getReader();
-        $reader->XML($responseXml, NULL, 0);
-        $this->generateArrays($reader);
-    }
 }
-
-
-$responseXml = "<?xml version=\"1.0\"?><ORDERS>
-<ORDER ID='09' REF='7934' URN='4534'>
-             </ORDER>
-             <ORDER ID='09' REF='7934' URN='4534'>
-             </ORDER>
-             <ORDER ID='09' REF='7934' URN='4534'>
-             </ORDER>
-             <ORDER ID='09' REF='7934' URN='4534'>
-             </ORDER>
-    </ORDERS>";
-$reader = new Parser();
-$reader->readXml($responseXml);
-print_r($reader);
+//
+//$responseXml = '';
+//$reader = new Parser();
+//$reader->readXml($responseXml);
+//print_r($reader);

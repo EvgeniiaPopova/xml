@@ -14,14 +14,14 @@ use Generate\BuilderAbstract;
 class CustomerExportBuilder extends BuilderAbstract 
 {
     /**
-     * @todo use getter for DOM object +. Add comments to code for logic separation +
+     * @todo Add comments to code for logic separation
      * @param \ArrayObject $dataObj
      */
     protected function createStructure(\ArrayObject $dataObj)
     {
         $dom = $this->getDom();
 
-        /**@#+ Xml Structure create */
+        // Xml Structure create
         $sales_orders = $dom->appendChild($dom->createElement('SALES_ORDERS'));
 
         $sales_orders_attr = $sales_orders->appendChild($dom->createAttribute('xmlns:xsi'));
@@ -33,9 +33,10 @@ class CustomerExportBuilder extends BuilderAbstract
         $provider_id->appendChild($dom->createTextNode('khaos'));
 
         $sales_order = $sales_orders->appendChild($dom->createElement('SALES_ORDER'));
-
+        //I was meaning: Customer details element
         $customer_detail = $sales_order->appendChild($dom->createElement('CUSTOMER_DETAIL'));
         $payments = $sales_order->appendChild($dom->createElement('PAYMENTS'));
+        //Order items elements
         $order_items = $sales_order->appendChild($dom->createElement('ORDER_ITEMS'));
         $order_header = $sales_order->appendChild($dom->createElement('ORDER_HEADER'));
 
@@ -43,6 +44,7 @@ class CustomerExportBuilder extends BuilderAbstract
         $is_new_customer->appendChild($dom->createTextNode($dataObj->offsetGet('is_new_customers')));
         $other_ref = $customer_detail->appendChild($dom->createElement('OTHER_REF'));
         $other_ref->appendChild($dom->createTextNode($dataObj->offsetGet('other_ref')));
+        //Company block
         $company_name = $customer_detail->appendChild($dom->createElement('COMPANY_NAME'));
         $company_name->appendChild($dom->createTextNode($dataObj->offsetGet('company_name')));
         $web_user = $customer_detail->appendChild($dom->createElement('WEB_USER'));
@@ -57,6 +59,7 @@ class CustomerExportBuilder extends BuilderAbstract
         $company_code->appendChild($dom->createTextNode($dataObj->offsetGet('company_code')));
         $optin_newsletter = $customer_detail->appendChild($dom->createElement('OPTIN_NEWSLETTER'));
         $optin_newsletter->appendChild($dom->createTextNode('-1'));
+        //Addresses and so on
         $addresses = $customer_detail->appendChild($dom->createElement('ADDRESSES'));
 
         $deladdr = $addresses->appendChild($dom->createElement('DELADDR'));
@@ -183,12 +186,10 @@ class CustomerExportBuilder extends BuilderAbstract
         $delivery_net->appendChild($dom->createTextNode('3.99'));
         $delivery_tax = $order_header->appendChild($dom->createElement('DELIVERY_TAX'));
         $delivery_tax->appendChild($dom->createTextNode('0.00'));
-        /**@#- */
     }
 
     /**
-     * @todo add argument $name type +
-     * @param string $name Name of xmlfile
+     * @param string $name Name of XML file
      * @param \ArrayObject $dataObj
      */
     public function buildXml($name, \ArrayObject $dataObj)

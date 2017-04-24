@@ -23,11 +23,14 @@ class CustomForm
      * @var
      */
     protected $form;
+
+    /**
+     * @var array
+     */
     protected $configure = array(
         "prevent" => array("bootstrap", "jQuery", "focus"), 'action' => 'action.php');
 
     /**
-     * @todo add argument type +
      * @param array $dataArray
      * @throws \Exception
      */
@@ -41,13 +44,14 @@ class CustomForm
     }
 
     /**
-     * @todo move form configure setting to class property +
      * @return string
      */
     function generate()
     {
         $form = $this->getForm();
+        /** @TODO Better define getter and then use it here */
         $config = $this->configure;
+
         $form->configure($config);
         $options = array(self::CUSTOMER_IS_NEW_YES, self::CUSTOMER_IS_NEW_NO);
         $form->addElement(new Element\HTML('<legend>Export Orders Form</legend>'));
@@ -63,6 +67,10 @@ class CustomForm
         return $form->render();
     }
 
+    /**
+     * @TODO not the best naming for method
+     * @param \ArrayObject $dataObj
+     */
     public function action(\ArrayObject $dataObj)
     {
         switch ($dataObj->offsetGet('is_new_customers')) {
