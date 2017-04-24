@@ -13,9 +13,10 @@ class Parser
 {
     /** @todo Where is method's access modifier?????. Decompose logic */
 
-    protected $reader;
+    public $reader;
 
     /**
+     * Set $reader object
      * @param \XMLReader $reader
      */
     public function setReader(\XMLReader $reader)
@@ -24,20 +25,20 @@ class Parser
     }
 
     /**
-     * @return mixed
+     * Get $reader object
+     * @return \XMLReader
      */
     public function getReader()
     {
         if (empty($this->reader)) {
             $this->setReader(new \XMLReader());
+
         }
         return $this->reader;
     }
 
-    function readXml($responseXml)
+    public function generateArrays($reader)
     {
-        $reader = $this->getReader();
-        $reader->XML($responseXml, NULL, 0);
         while ($reader->read()) {
             if ($reader->nodeType == \XMLReader::ELEMENT) {
                 if ($reader->localName == 'ORDER') {
@@ -65,4 +66,26 @@ class Parser
             }
         }
     }
+
+    public function readXml($responseXml)
+    {
+        $reader = $this->getReader();
+        $reader->XML($responseXml, NULL, 0);
+        $this->generateArrays($reader);
+    }
 }
+
+
+$responseXml = "<?xml version=\"1.0\"?><ORDERS>
+<ORDER ID='09' REF='7934' URN='4534'>
+             </ORDER>
+             <ORDER ID='09' REF='7934' URN='4534'>
+             </ORDER>
+             <ORDER ID='09' REF='7934' URN='4534'>
+             </ORDER>
+             <ORDER ID='09' REF='7934' URN='4534'>
+             </ORDER>
+    </ORDERS>";
+$reader = new Parser();
+$reader->readXml($responseXml);
+print_r($reader);
