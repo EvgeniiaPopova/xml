@@ -13,15 +13,10 @@ use Generate\Xml\XmlExportFactory as Factory;
 
 $dataArray = $_POST;
 $dataObj = new ArrayObject($dataArray);
-/** @todo move this logic to suitable class */
-switch ($dataObj->offsetGet('is_new_customers')) {
-    case CustomForm::CUSTOMER_IS_NEW_NO:
-        $dataObj->offsetSet('is_new_customers', -1);
-        break;
-    case CustomForm::CUSTOMER_IS_NEW_YES:
-    default:
-        $dataObj->offsetSet('is_new_customers', 1);
-}
+/** @todo move this logic to suitable class + */
+
+$action = new CustomForm();
+$action->action($dataObj);
 
 $date = date("Y-m-d_H:i:s");
 $xmlName = sprintf('xml_%s.xml', $date);

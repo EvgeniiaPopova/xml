@@ -6,10 +6,12 @@
  * Date: 21.04.17
  */
 
+/** @todo remove hard coded path + */
 session_start();
-/** @todo remove hard coded path */
 require_once '/var/www/xml/vendor/autoload.php';
 require_once 'header.php';
 
-$form = new \Generate\Form\CustomForm();
+use Generate\Form\CustomForm as CustomForm;
+
+$form = new CustomForm();
 $form->generate();

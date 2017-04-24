@@ -10,32 +10,32 @@
 namespace Generate;
 
 /**
- * @todo rename properties and methods regarding PSR-1
+ * @todo rename properties and methods regarding PSR-1 +
  * Class BuilderAbstract
  * @package Generate
  */
 abstract class BuilderAbstract
 {
-    protected $_dom = '';
+    protected $dom = '';
 
     abstract public function buildXml($name, \ArrayObject $dataObj);
 
     public function __construct()
     {
-        $this->_dom = new \DOMDocument('1.0');
+        $this->dom = new \DOMDocument('1.0');
     }
 
-    protected function _getDom()
+    protected function getDom()
     {
-        if (!isset($this->_dom)) {
-            $this->_dom = new \DOMDocument();
+        if (!isset($this->dom)) {
+            $this->dom = new \DOMDocument();
         }
-        return $this->_dom;
+        return $this->dom;
     }
 
     public function save($name)
     {
-        $dom = $this->_dom;
+        $dom = $this->dom;
         $dom->formatOutput = true;
         $dom->save($name);
     }

@@ -1,4 +1,6 @@
-<?php require_once 'header.php' ?>
+<?php
+
+require_once 'header.php' ?>
 <div class="container-fluid">
     <div class="row-fluid">
         <div class="span3">
@@ -17,5 +19,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>

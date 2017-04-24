@@ -22,14 +22,16 @@ class CustomForm
     /**
      * @var
      */
-    protected $_form;
+    protected $form;
+    protected $configure = array(
+        "prevent" => array("bootstrap", "jQuery", "focus"), 'action' => 'action.php');
 
     /**
-     * @todo add argument type
-     * @param $dataArray
+     * @todo add argument type +
+     * @param array $dataArray
      * @throws \Exception
      */
-    public static function validate($dataArray)
+    public static function validate(array $dataArray)
     {
         if (isset($dataArray)) {
             if (Form::isValid($dataArray)) {
@@ -39,14 +41,14 @@ class CustomForm
     }
 
     /**
-     * @todo move form configure setting to class property
+     * @todo move form configure setting to class property +
      * @return string
      */
     function generate()
     {
         $form = $this->getForm();
-        $form->configure(array(
-            "prevent" => array("bootstrap", "jQuery", "focus"), 'action' => 'action.php'));
+        $config = $this->configure;
+        $form->configure($config);
         $options = array(self::CUSTOMER_IS_NEW_YES, self::CUSTOMER_IS_NEW_NO);
         $form->addElement(new Element\HTML('<legend>Export Orders Form</legend>'));
         $form->addElement(new Element\Radio("Is new customer:", "is_new_customers", $options, array("required" => 1)));
@@ -61,12 +63,24 @@ class CustomForm
         return $form->render();
     }
 
+    public function action(\ArrayObject $dataObj)
+    {
+        switch ($dataObj->offsetGet('is_new_customers')) {
+            case self::CUSTOMER_IS_NEW_NO:
+                $dataObj->offsetSet('is_new_customers', -1);
+                break;
+            case self::CUSTOMER_IS_NEW_YES:
+            default:
+                $dataObj->offsetSet('is_new_customers', 1);
+        }
+    }
+
     /**
      * @param \PFBC\Form $form
      */
     public function setForm(Form $form)
     {
-        $this->_form = $form;
+        $this->form = $form;
     }
 
     /**
@@ -77,6 +91,6 @@ class CustomForm
         if (empty($this->form)) {
             $this->setForm(new Form("ExportOrdersForm"));
         }
-        return $this->_form;
+        return $this->form;
     }
 }

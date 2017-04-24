@@ -12,9 +12,31 @@ namespace Parse\Xml;
 class Parser
 {
     /** @todo Where is method's access modifier?????. Decompose logic */
+
+    protected $reader;
+
+    /**
+     * @param \XMLReader $reader
+     */
+    public function setReader(\XMLReader $reader)
+    {
+        $this->reader = $reader;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getReader()
+    {
+        if (empty($this->reader)) {
+            $this->setReader(new \XMLReader());
+        }
+        return $this->reader;
+    }
+
     function readXml($responseXml)
     {
-        $reader = new \XMLReader();
+        $reader = $this->getReader();
         $reader->XML($responseXml, NULL, 0);
         while ($reader->read()) {
             if ($reader->nodeType == \XMLReader::ELEMENT) {
