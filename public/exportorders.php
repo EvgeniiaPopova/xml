@@ -10,10 +10,10 @@
 session_start();
 $path = dirname(dirname(__FILE__));
 require_once($path . '/vendor/autoload.php');
-require_once 'header.php';
 
 use Generate\Form\CustomForm as CustomForm;
 
 $form = new CustomForm();
 $form->generate();
+
 
