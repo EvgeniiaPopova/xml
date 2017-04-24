@@ -9,12 +9,13 @@
 
 namespace Parse\Xml;
 
-/** @TODO bad naming for class - namespace has one value and class has another */
-class Parser
+/** @TODO bad naming for class - namespace has one value and class has another + */
+class Parse
 {
     /** @todo Where is method's access modifier?????. Decompose logic */
 
     public $reader;
+    protected $returnRows;
 
     /**
      * Set $reader object
@@ -55,36 +56,28 @@ class Parser
         /** @TODO At the moment don't understand what is going on here */
 
         while ($reader->read()) {
-            if ($reader->nodeType == \XMLReader::ELEMENT) {
-                if ($reader->localName == 'ORDER') {
-                    $data = array();
-                    $data['id'] = $reader->getAttribute('ID');
-                    $data['ref'] = $reader->getAttribute('REF');
-                    $data['urn'] = $reader->getAttribute('URN');
+            if ($reader->nodeType == \XMLReader::ELEMENT && $reader->localName == 'ORDER') {
+                $data = array();
+                $data['id'] = $reader->getAttribute('ID');
+                $data['ref'] = $reader->getAttribute('REF');
+                $data['urn'] = $reader->getAttribute('URN');
 
-                        $reader->read();
-                    if ($reader->nodeType == \XMLReader::TEXT) {
-                        $data['value'] = $reader->value;
-                        $reader->read();
-                        foreach ($data as $item => $value) {
-                            switch ($item) {
-                                case 'value':
-                                    printf('%s = %s %s %s', $item, $value, PHP_EOL, PHP_EOL);
-                                    break;
-                                default:
-                                    printf('%s=%s %s', $item, $value, PHP_EOL);
-                                    break;
-                            }
-                        }
-                        }
+                if ($reader->nodeType == \XMLReader::TEXT) {
+                    $data['value'] = $reader->value;
+                    foreach ($data as $item => $value) {
+                        $row = sprintf('%s = %s %s', $item, $value, PHP_EOL);
                     }
+                    $this->resultRows[] = $row;
                 }
             }
         }
+    }
+
+    public function getResultRows()
+    {
+        return $this->resultRows;
+    }
 }
 
-//
-//$responseXml = '';
-//$reader = new Parser();
-//$reader->readXml($responseXml);
-//print_r($reader);
+   
+

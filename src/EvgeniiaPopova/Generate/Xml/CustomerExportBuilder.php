@@ -15,6 +15,7 @@ use Generate\Form\CustomForm;
 class CustomerExportBuilder extends BuilderAbstract
 {
     public $name;
+
     /**
      * @todo Add comments to code for logic separation +
      * @param \ArrayObject $dataObj
@@ -189,8 +190,29 @@ class CustomerExportBuilder extends BuilderAbstract
     }
 
     /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+//    /**
+//     * @return mixed
+//     */
+//    public function getName()
+//    {
+//        if (empty($this->name)) {
+//            $date = date("Y-m-d_H:i:s");
+//            $this->setName("xml_{$date}.xml");
+//        }
+//        return $this->name;
+//    }
+
+    /**
      * @param string $name Name of XML file
      * @param \ArrayObject $dataObj
+     * @return \Generate\Xml\
      */
     public function buildXml($name, \ArrayObject $dataObj)
     {

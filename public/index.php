@@ -45,5 +45,4 @@
 </div>
 <?php require_once 'exportorders.php'; ?>
 </body>
-;
 </html>
