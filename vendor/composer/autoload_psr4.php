@@ -6,4 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Parse\\' => array($baseDir . '/src/EvgeniiaPopova/Parse'),
+    'Generate\\' => array($baseDir . '/src/EvgeniiaPopova/Generate'),
 );

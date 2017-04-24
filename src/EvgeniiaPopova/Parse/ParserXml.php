@@ -6,14 +6,17 @@
  * E-mail: zhenia@avaito.com
  * Date: 21.04.17
  */
-class ParserXml
+
+namespace Parse\Xml;
+
+class Parser
 {
     function readXml($responseXml)
     {
-        $reader = new XMLReader();
+        $reader = new \XMLReader();
         $reader->XML($responseXml, NULL, 0);
         while ($reader->read()) {
-            if ($reader->nodeType == XMLReader::ELEMENT) {
+            if ($reader->nodeType == \XMLReader::ELEMENT) {
                 if ($reader->localName == 'ORDER') {
                     $data = array();
                     $data['id'] = $reader->getAttribute('ID');
@@ -21,7 +24,7 @@ class ParserXml
                     $data['urn'] = $reader->getAttribute('URN');
 
                     $reader->read();
-                    if ($reader->nodeType == XMLReader::TEXT) {
+                    if ($reader->nodeType == \XMLReader::TEXT) {
                         $data['value'] = $reader->value;
                         $reader->read();
                         foreach ($data as $item => $value) {

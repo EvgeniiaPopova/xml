@@ -6,6 +6,8 @@
  * E-mail: zhenia@avaito.com
  * Date: 21.04.17
  */
+namespace Generate;
+
 class Config
 {
     protected $env;
@@ -31,7 +33,7 @@ class Config
         if ($this->validateEnv($env)) {
             $this->env = $env;
         } else {
-            throw new Exception('Invalid environment');
+            throw new \Exception('Invalid environment');
         }
     }
 

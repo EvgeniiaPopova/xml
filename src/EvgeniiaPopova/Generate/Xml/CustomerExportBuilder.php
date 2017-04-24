@@ -6,9 +6,14 @@
  * E-mail: zhenia@avaito.com
  * Date: 02.04.17
  */
-class CustomerExportBuilder extends BuilderAbstract
+
+namespace Generate\Xml;
+
+use Generate\BuilderAbstract;
+
+class CustomerExportBuilder extends BuilderAbstract 
 {
-    protected function createStructure(ArrayObject $dataObj)
+    protected function createStructure(\ArrayObject $dataObj)
     {
         $dom = $this->_dom;
 
@@ -175,7 +180,7 @@ class CustomerExportBuilder extends BuilderAbstract
         $delivery_tax->appendChild($dom->createTextNode('0.00'));
     }
 
-    public function buildXml($name, ArrayObject $dataObj)
+    public function buildXml($name, \ArrayObject $dataObj)
     {
         $this->_getDom();
         $this->createStructure($dataObj);

@@ -1,5 +1,11 @@
 {
-    "require": {
-        "pfbc/pfbc": "^3.1"
+  "require": {
+    "pfbc/pfbc": "^3.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Generate\\": "src/EvgeniiaPopova/Generate",
+      "Parse\\": "src/EvgeniiaPopova/Parse"
     }
+  }
 }

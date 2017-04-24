@@ -6,11 +6,13 @@
  * Date: 29.03.17
  */
 
-require_once '../autoloader.php';
+require_once '/var/www/xml/vendor/autoload.php';
+
+use Generate\Form\CustomForm;
+use Generate\Xml\XmlExportFactory as Factory;
 
 $dataArray = $_POST;
 $dataObj = new ArrayObject($dataArray);
-
 
 switch ($dataObj->offsetGet('is_new_customers')) {
     case CustomForm::CUSTOMER_IS_NEW_NO:
@@ -23,7 +25,7 @@ switch ($dataObj->offsetGet('is_new_customers')) {
 
 $date = date("Y-m-d_H:i:s");
 $xmlName = sprintf('xml_%s.xml', $date);
-$factory = new XmlExportFactory();
+$factory = new Factory();
 $xmlBuilder = $factory->getBuilder('CustomerExport');
 $xmlBuilder->buildXml($xmlName, $dataObj);
 

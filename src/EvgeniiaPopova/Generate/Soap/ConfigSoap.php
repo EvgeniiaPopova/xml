@@ -6,6 +6,11 @@
  * E-mail: zhenia@avaito.com
  * Date: 21.04.17
  */
+
+namespace Generate\Soap;
+
+use \Generate\Config;
+
 class ConfigSoap extends Config
 {
     const WSDL_LOCATION = 'location';

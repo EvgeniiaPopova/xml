@@ -7,8 +7,8 @@
  */
 
 session_start();
-require_once '../autoloader.php';
+require_once '/var/www/xml/vendor/autoload.php';
 require_once 'header.php';
 
-$form = new CustomForm();
+$form = new \Generate\Form\CustomForm();
 $form->generate();

@@ -6,6 +6,11 @@
  * E-mail: zhenia@avaito.com
  * Date: 02.04.17
  */
+
+namespace Generate\Xml;
+
+use Generate\ExportFactoryAbstract;
+
 class XmlExportFactory extends ExportFactoryAbstract
 {
     const XML_CUSTOMER_EXPORT = 'CustomerExport';
