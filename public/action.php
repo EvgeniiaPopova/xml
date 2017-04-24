@@ -14,9 +14,12 @@ use Generate\Xml\XmlExportFactory as Factory;
 $dataArray = $_POST;
 $dataObj = new ArrayObject($dataArray);
 
-/** @TODO Afterall you don't do nothing with $action. WHy it here? */
-$action = new CustomForm();
-$action->action($dataObj);
+/** @TODO Afterall you don't do nothing with $action. WHy it here? + ->
+ * It determinate 'is_new_customer' value from $dataObj for use it at the Xmlfile.
+ * /** @var  $action
+ */
+$isNewCustomer = new CustomForm();
+$isNewCustomer->determinateCustomer($dataObj);
 
 $date = date("Y-m-d_H:i:s");
 $xmlName = sprintf('xml_%s.xml', $date);

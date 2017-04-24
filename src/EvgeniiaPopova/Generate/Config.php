@@ -6,6 +6,12 @@
  * E-mail: zhenia@avaito.com
  * Date: 21.04.17
  */
+
+/**
+ * @property string $env type of environment
+ * @property  string $pathToConf Path to config
+ * @property array $types list of types
+ */
 namespace Generate;
 
 class Config
@@ -14,10 +20,6 @@ class Config
      * @TODO Please if you don't know how to use PHPDoc - read documentation.
      * Properties PHPDoc blocks are in wrong place
      */
-
-    /** @var string $env type of environment */
-    /** @var string $pathToConf Path to config */
-    /** @var array $types list of types */
 
     protected $env;
     protected $pathToConf = '../config/config.yml';
@@ -39,8 +41,8 @@ class Config
     }
 
     /**
-     * @TODO What type of $env?
-     * @param $env
+     * @TODO What type of $env? +
+     * @param string $env
      * @return bool
      */
     public function validateEnv($env)
@@ -49,8 +51,8 @@ class Config
     }
 
     /**
-     * @TODO What type of $env?
-     * @param $env
+     * @TODO What type of $env? +
+     * @param string $env
      * @throws \Exception
      */
     public function setEnv($env)

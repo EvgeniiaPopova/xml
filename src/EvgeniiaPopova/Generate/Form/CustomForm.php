@@ -69,9 +69,10 @@ class CustomForm
 
     /**
      * @TODO not the best naming for method
+     * @return \ArrayObject $dataObj
      * @param \ArrayObject $dataObj
      */
-    public function action(\ArrayObject $dataObj)
+    public function determinateCustomer(\ArrayObject $dataObj)
     {
         switch ($dataObj->offsetGet('is_new_customers')) {
             case self::CUSTOMER_IS_NEW_NO:
