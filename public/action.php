@@ -6,7 +6,8 @@
  * Date: 29.03.17
  */
 
-require_once '/var/www/xml/vendor/autoload.php';
+$path = dirname(dirname(__FILE__));
+require_once($path . '/vendor/autoload.php');
 
 use Generate\Form\CustomForm;
 use Generate\Xml\XmlExportFactory as Factory;
