@@ -13,6 +13,9 @@ use Generate\BuilderAbstract;
 
 class CustomerExportBuilder extends BuilderAbstract
 {
+    /**
+     * @var string $name xmlfile name
+     */
     public $name;
 
     /**
@@ -189,7 +192,7 @@ class CustomerExportBuilder extends BuilderAbstract
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -197,15 +200,28 @@ class CustomerExportBuilder extends BuilderAbstract
     }
 
     /**
-     * @param string $name Name of XML file
+     * @return string $name
+     */
+    public function getName()
+    {
+        if (empty($this->name)) {
+            $date = date_create('Y-m-d_H:i:s');
+            $this->setName("xml_{$date}.xml");
+        }
+        return $this->name;
+    }
+
+    /**
      * @param \ArrayObject $dataObj
      * @return \Generate\Xml\
      */
-    public function buildXml($name, \ArrayObject $dataObj)
+    public function buildXml(\ArrayObject $dataObj)
     {
+        $name = $this->getName();
         $this->getDom();
         $this->createStructure($dataObj);
         $this->save($name);
+        chmod($name, 0777);
     }
 }
 

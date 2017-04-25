@@ -16,18 +16,14 @@ $dataObj = new ArrayObject($dataArray);
 
 /** @TODO Afterall you don't do nothing with $action. WHy it here? + ->
  * It determinate 'is_new_customer' value from $dataObj for use it at the Xmlfile.
- * /** @var  $action
  */
-$dataObj = CustomForm::determinateCustomer($dataObj);
+CustomForm::determinateCustomer($dataObj);
 
-$date = date("Y-m-d_H:i:s");
-$xmlName = sprintf('xml_%s.xml', $date);
 $factory = new Factory();
 $xmlBuilder = $factory->getBuilder('CustomerExport');
-/** @TODO I would recommend you to define and use some setter for filename and build XML only passing dataObject */
-$xmlBuilder->buildXml($xmlName, $dataObj);
+/** @TODO I would recommend you to define and use some setter for filename and build XML only passing dataObject + */
+$xmlBuilder->buildXml($dataObj);
 
 /** @TODO XML name at the moment will always set. so here is no need in this check + */
-chmod($xmlName, 0777);
-header("Location: {$xmlName}");
+//header("Location: {$xmlName}");
 
