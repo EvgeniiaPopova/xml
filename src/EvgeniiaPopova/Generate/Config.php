@@ -38,7 +38,6 @@ class Config
      */
     public function __construct($env)
     {
-        /** @TODO create getter for env types + */
         $this->setTypes(array());
         $this->setEnv($env);
     }
