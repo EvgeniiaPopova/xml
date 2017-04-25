@@ -118,10 +118,9 @@ class CustomForm
      */
     public function getConfig()
     {
-        $config = $this->config;
         $action = $this->getActionConfig();
-        $config['action'] = $action;
-        return $config;
+        $this->config['action'] = $action;
+        return $this->config;
     }
 
     /**
@@ -156,4 +155,3 @@ class CustomForm
         return $this->config['action'];
     }
 }
-

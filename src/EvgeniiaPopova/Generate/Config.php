@@ -39,7 +39,7 @@ class Config
     public function __construct($env)
     {
         /** @TODO create getter for env types + */
-        $this->getTypes();
+        $this->setTypes(array());
         $this->setEnv($env);
     }
 
@@ -74,12 +74,20 @@ class Config
     }
 
     /**
+     * @param array $types
+     */
+    public function setTypes($types)
+    {
+        $this->types = $types;
+    }
+
+    /**
      * @return array
      */
     public function getTypes()
     {
         if (empty($this->types)) {
-            $this->types = array(self::ENV_TEST, self::ENV_PROD);
+            $this->setTypes(array(self::ENV_TEST, self::ENV_PROD));
         }
         return $this->types;
     }
