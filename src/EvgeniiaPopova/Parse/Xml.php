@@ -14,7 +14,9 @@ class Xml
 {
     /** @todo Where is method's access modifier?????. Decompose logic */
 
+    /** @var \XMLReader */
     public $reader;
+    /** @var array */
     protected $resultRows;
 
     /**
@@ -34,26 +36,19 @@ class Xml
     {
         if (empty($this->reader)) {
             $this->setReader(new \XMLReader());
-
         }
         return $this->reader;
     }
 
-
-    public function generateArrays($reader)
-    {
-
-        /**
-         * @TODO where method access modifier???
-         * @param $responseXml
-         */
-    }
-
+    /**
+     * @TODO where method access modifier???
+     * @param $responseXml
+     */
     public function readXml($responseXml)
     {
         $reader = $this->getReader();
         $reader->XML($responseXml, NULL, 0);
-        /** @TODO At the moment don't understand what is going on here */
+        /** @TODO At the moment don't understand what is going on here (I don't know how to finish this, need help) */
 
         while ($reader->read()) {
             if ($reader->nodeType == \XMLReader::ELEMENT && $reader->localName == 'ORDER') {
@@ -73,6 +68,10 @@ class Xml
         }
     }
 
+    /**
+     * get Result after parsing
+     * @return array
+     */
     public function getResultRows()
     {
         return $this->resultRows;
