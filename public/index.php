@@ -40,9 +40,9 @@
             </div>
         </div>
         <div class="span9">
+            <?php require_once 'exportorders.php'; ?>
         </div>
     </div>
 </div>
-<?php require_once 'exportorders.php'; ?>
 </body>
 </html>

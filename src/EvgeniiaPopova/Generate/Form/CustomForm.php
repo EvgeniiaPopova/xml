@@ -27,7 +27,6 @@ class CustomForm
     protected $form = null;
 
     /**
-     * @TODO create setter for action options +
      * @var array $configure
      */
     protected $config = array(
@@ -62,7 +61,6 @@ class CustomForm
         /** @var array $config */
         $config = $this->getConfig();
         $form->configure($config);
-        /** TODO create getter for is_customer option + */
         $options = $this->getCustomerOptions();
         $form->addElement(new Element\HTML('<legend>Export Orders Form</legend>'));
         $form->addElement(new Element\Radio("Is new customer:", "is_new_customers", $options, array("required" => 1)));
