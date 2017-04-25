@@ -14,6 +14,7 @@ require_once($path . '/vendor/autoload.php');
 
 use \Generate\Soap\ConfigSoap as ConfigSoap;
 use \Parse\Xml as Parser;
+
 try {
     $config = new ConfigSoap('test');
     $options = $config->getOptions();
