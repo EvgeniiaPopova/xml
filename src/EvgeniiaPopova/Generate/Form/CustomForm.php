@@ -22,12 +22,12 @@ class CustomForm
     /**#@-*/
 
     /**
-     * @var
+     * @var mixed
      */
     protected $form;
 
     /**
-     * @var array
+     * @var array $configure  
      */
     protected $configure = array(
         "prevent" => array("bootstrap", "jQuery", "focus"), 'action' => 'action.php');
@@ -105,6 +105,9 @@ class CustomForm
         return $this->form;
     }
 
+    /**
+     * @return array
+     */
     public function getConfigure()
     {
         return $this->configure;

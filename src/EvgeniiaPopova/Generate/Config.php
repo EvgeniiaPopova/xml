@@ -75,7 +75,7 @@ class Config
         return $this->env;
     }
 
-    /**
+    /**Get options
      * @return array
      * @todo STORE OPTIONS +-?
      */

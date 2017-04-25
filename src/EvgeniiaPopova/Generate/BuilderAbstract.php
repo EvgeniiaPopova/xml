@@ -18,7 +18,7 @@ namespace Generate;
 abstract class BuilderAbstract
 {
     /**
-     * @var \DOMDocument|string
+     * @var \DOMDocument
      */
     protected $dom = '';
 
@@ -49,7 +49,7 @@ abstract class BuilderAbstract
 
     /**
      * @param string $name
-     * @return Xml\
+     * @return \Generate\Xml\
      */
     public function save($name)
     {
