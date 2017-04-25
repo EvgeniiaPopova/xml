@@ -23,11 +23,10 @@ abstract class BuilderAbstract
     protected $dom = '';
 
     /**
-     * @param $name
      * @param \ArrayObject $dataObj
      * @return mixed
      */
-    abstract public function buildXml($name, \ArrayObject $dataObj);
+    abstract public function buildXml(\ArrayObject $dataObj);
 
     /**
      * BuilderAbstract constructor.
