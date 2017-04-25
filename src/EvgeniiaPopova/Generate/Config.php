@@ -38,8 +38,8 @@ class Config
      */
     public function __construct($env)
     {
-        /** @TODO create getter for env types */
-        $this->types = array(self::ENV_TEST, self::ENV_PROD);
+        /** @TODO create getter for env types + */
+        $this->getTypes();
         $this->setEnv($env);
     }
 
@@ -49,7 +49,7 @@ class Config
      */
     public function validateEnv($env)
     {
-        return in_array($env, $this->types);
+        return in_array($env, $this->getTypes());
     }
 
     /**
@@ -71,6 +71,17 @@ class Config
     public function getEnv()
     {
         return $this->env;
+    }
+
+    /**
+     * @return array
+     */
+    public function getTypes()
+    {
+        if (empty($this->types)) {
+            $this->types = array(self::ENV_TEST, self::ENV_PROD);
+        }
+        return $this->types;
     }
 
     /**

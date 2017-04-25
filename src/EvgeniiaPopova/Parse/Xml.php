@@ -11,8 +11,6 @@ namespace Parse;
 
 class Xml
 {
-    /** @todo Where is method's access modifier?????. Decompose logic */
-
     /** @var \XMLReader|null */
     public $reader = null;
     /** @var array */

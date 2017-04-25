@@ -28,13 +28,17 @@ class CustomForm
     protected $form = null;
 
     /**
-     * @TODO create setter for action options
+     * @TODO create setter for action options +
      * @var array $configure
      */
-    protected $configure = array(
+    protected $config = array(
         'prevent' => array('bootstrap', 'jQuery', 'focus'),
-        'action' => 'action.php'
+        'action' => ''
     );
+    /**
+     * @var array
+     */
+    protected $options = array();
 
     /**
      * @param array $dataArray
@@ -59,8 +63,8 @@ class CustomForm
         /** @var array $config */
         $config = $this->getConfig();
         $form->configure($config);
-        /** TODO create getter for is_customer option */
-        $options = array(self::CUSTOMER_IS_NEW_YES, self::CUSTOMER_IS_NEW_NO);
+        /** TODO create getter for is_customer option + */
+        $options = $this->getCustomerOptions();
         $form->addElement(new Element\HTML('<legend>Export Orders Form</legend>'));
         $form->addElement(new Element\Radio("Is new customer:", "is_new_customers", $options, array("required" => 1)));
         $form->addElement(new Element\Textbox("Other Ref:", 'other_ref', array("required" => 1)));
@@ -115,6 +119,42 @@ class CustomForm
      */
     public function getConfig()
     {
-        return $this->configure;
+        $config = $this->config;
+        $action = $this->getActionConfig();
+        $config['action'] = $action;
+        return $config;
+    }
+
+    /**
+     * Get options for field 'is_new_customer'
+     * @return array
+     */
+    public function getCustomerOptions()
+    {
+        if (empty($this->options)) {
+            $this->options = array(self::CUSTOMER_IS_NEW_YES, self::CUSTOMER_IS_NEW_NO);
+        }
+        return $this->options;
+    }
+
+    /**
+     * @param string $filename name of action file
+     */
+    public function setActionConfig($filename)
+    {
+        $this->config['action'] = $filename;
+    }
+
+    /**
+     * Get filename of form action file
+     * @return string
+     */
+    public function getActionConfig()
+    {
+        if (empty($this->config['action'])) {
+            $this->setActionConfig('action.php');
+        }
+        return $this->config['action'];
     }
 }
+

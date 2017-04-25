@@ -17,7 +17,7 @@ $dataObj = new ArrayObject($dataArray);
 
 /** @TODO Change logic
  */
-CustomForm::determinateCustomer($dataObj);
+CustomForm::determineCustomer($dataObj);
 
 $factory = new Factory();
 $xmlBuilder = $factory->getBuilder('CustomerExport');
