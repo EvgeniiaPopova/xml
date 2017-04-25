@@ -9,13 +9,11 @@
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL & ~E_NOTICE);
-/** @TODO WHY HERE WAS A PLUS??? DID YOU REMOVE HARDCODED PATH????? + */
-$path = dirname(dirname(__FILE__));
-require_once($path . '/vendor/autoload.php');
+/** @TODO WHY HERE WAS A PLUS??? DID YOU REMOVE HARDCODED PATH????? */
+require_once '/var/www/xml/vendor/autoload.php';
 
 use \Generate\Soap\ConfigSoap as ConfigSoap;
-use \Parse\Xml\Xml as Parser;
-
+use \Parse\Xml as Parser;
 try {
     $config = new ConfigSoap('test');
     $options = $config->getOptions();
