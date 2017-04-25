@@ -9,18 +9,17 @@
 
 namespace Parse;
 
-/** @TODO bad naming for class - namespace has one value and class has another + */
 class Xml
 {
     /** @todo Where is method's access modifier?????. Decompose logic */
 
-    /** @var \XMLReader */
-    public $reader;
+    /** @var \XMLReader|null */
+    public $reader = null;
     /** @var array */
-    protected $resultRows;
+    protected $resultRows = array();
 
     /**
-     * Set $reader object
+     * Set reader object
      * @param \XMLReader $reader
      */
     public function setReader(\XMLReader $reader)
@@ -29,7 +28,7 @@ class Xml
     }
 
     /**
-     * Get $reader object
+     * Get reader object
      * @return \XMLReader
      */
     public function getReader()
@@ -41,14 +40,12 @@ class Xml
     }
 
     /**
-     * @TODO where method access modifier???
-     * @param $responseXml
+     * @param string $responseXml
      */
     public function readXml($responseXml)
     {
         $reader = $this->getReader();
         $reader->XML($responseXml, NULL, 0);
-        /** @TODO At the moment don't understand what is going on here (I don't know how to finish this, need help) */
 
         while ($reader->read()) {
             if ($reader->nodeType == \XMLReader::ELEMENT && $reader->localName == 'ORDER') {
@@ -61,15 +58,15 @@ class Xml
                     $data['value'] = $reader->value;
                     foreach ($data as $item => $value) {
                         $row = sprintf('%s = %s %s', $item, $value, PHP_EOL);
+                        $this->resultRows[] = $row;
                     }
-                    $this->resultRows[] = $row;
                 }
             }
         }
     }
 
     /**
-     * get Result after parsing
+     * Get result after parsing
      * @return array
      */
     public function getResultRows()
@@ -77,6 +74,3 @@ class Xml
         return $this->resultRows;
     }
 }
-
-   
-

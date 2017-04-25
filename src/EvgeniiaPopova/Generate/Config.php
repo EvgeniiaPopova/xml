@@ -12,7 +12,6 @@ namespace Generate;
 class Config
 {
     /**
-     * @TODO Please if you don't know how to use PHPDoc - read documentation. +
      * Properties PHPDoc blocks are in wrong place
      */
 
@@ -39,12 +38,12 @@ class Config
      */
     public function __construct($env)
     {
+        /** @TODO create getter for env types */
         $this->types = array(self::ENV_TEST, self::ENV_PROD);
         $this->setEnv($env);
     }
 
     /**
-     * @TODO What type of $env? +
      * @param string $env
      * @return bool
      */
@@ -54,7 +53,6 @@ class Config
     }
 
     /**
-     * @TODO What type of $env? +
      * @param string $env
      * @throws \Exception
      */
@@ -75,16 +73,17 @@ class Config
         return $this->env;
     }
 
-    /**Get options
+    /**
+     * Get options
      * @return array
      * @todo STORE OPTIONS +-?
      */
     public function getOptions()
     {
         $env = $this->getEnv();
-        if (empty($options)) {
-            $options = yaml_parse_file($this->pathToConf);
+        if (empty($this->options)) {
+            $this->options = yaml_parse_file($this->pathToConf);
         }
-        return $options[$env];
+        return $this->options[$env];
     }
 }

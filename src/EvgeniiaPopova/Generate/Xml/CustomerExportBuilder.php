@@ -19,7 +19,6 @@ class CustomerExportBuilder extends BuilderAbstract
     public $name;
 
     /**
-     * @todo Add comments to code for logic separation +
      * @param \ArrayObject $dataObj
      */
     protected function createStructure(\ArrayObject $dataObj)
@@ -205,8 +204,8 @@ class CustomerExportBuilder extends BuilderAbstract
     public function getName()
     {
         if (empty($this->name)) {
-            $date = date_create('Y-m-d_H:i:s');
-            $this->setName("xml_{$date}.xml");
+            $date = date('Y-m-d_H:i:s');
+            $this->setName(sprintf('xml_%s.xml', $date));
         }
         return $this->name;
     }
@@ -221,7 +220,6 @@ class CustomerExportBuilder extends BuilderAbstract
         $this->getDom();
         $this->createStructure($dataObj);
         $this->save($name);
-        chmod($name, 0777);
+        chmod($name, 0644);
     }
 }
-

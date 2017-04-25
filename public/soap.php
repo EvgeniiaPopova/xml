@@ -9,7 +9,6 @@
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL & ~E_NOTICE);
-/** @TODO WHY HERE WAS A PLUS??? DID YOU REMOVE HARDCODED PATH????? + */
 $path = dirname(dirname(__FILE__));
 require_once($path . '/vendor/autoload.php');
 
@@ -25,7 +24,7 @@ try {
 
     $parser = new Parser();
     $parser->readXml($responseXml);
-
+    /** @TODO SOME OUTPUT FUNCTION */
 } catch (Exception $e) {
     print $e->getMessage();
 }

@@ -10,8 +10,6 @@
 namespace Generate;
 
 /**
- * @TODO Why here was plus if var $dom hasn't PHPDoc????? Let alone other methods???? +?
- *
  * Class BuilderAbstract
  * @package Generate
  */
@@ -20,11 +18,10 @@ abstract class BuilderAbstract
     /**
      * @var \DOMDocument
      */
-    protected $dom = '';
+    protected $dom = null;
 
     /**
      * @param \ArrayObject $dataObj
-     * @return mixed
      */
     abstract public function buildXml(\ArrayObject $dataObj);
 
@@ -33,11 +30,11 @@ abstract class BuilderAbstract
      */
     public function __construct()
     {
-        $this->dom = new \DOMDocument('1.0');
+        $this->dom = $this->getDom();
     }
 
     /**
-     * @return \DOMDocument|string
+     * @return \DOMDocument|null
      */
     protected function getDom()
     {
@@ -49,11 +46,10 @@ abstract class BuilderAbstract
 
     /**
      * @param string $name
-     * @return \Generate\Xml\
      */
     public function save($name)
     {
-        $dom = $this->dom;
+        $dom = $this->getDom();
         $dom->formatOutput = true;
         $dom->save($name);
     }

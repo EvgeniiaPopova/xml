@@ -9,6 +9,7 @@
 
 namespace Generate\Form;
 
+use Generate\Config;
 use PFBC\Form as Form;
 use PFBC\Element as Element;
 
@@ -22,15 +23,18 @@ class CustomForm
     /**#@-*/
 
     /**
-     * @var mixed
+     * @var Form|null
      */
-    protected $form;
+    protected $form = null;
 
     /**
-     * @var array $configure  
+     * @TODO create setter for action options
+     * @var array $configure
      */
     protected $configure = array(
-        "prevent" => array("bootstrap", "jQuery", "focus"), 'action' => 'action.php');
+        'prevent' => array('bootstrap', 'jQuery', 'focus'),
+        'action' => 'action.php'
+    );
 
     /**
      * @param array $dataArray
@@ -50,10 +54,12 @@ class CustomForm
      */
     function generate()
     {
+        /** @var \PFBC\Form $form */
         $form = $this->getForm();
-        /** @TODO Better define getter and then use it here +? */
-        $config = $this->getConfigure();
+        /** @var array $config */
+        $config = $this->getConfig();
         $form->configure($config);
+        /** TODO create getter for is_customer option */
         $options = array(self::CUSTOMER_IS_NEW_YES, self::CUSTOMER_IS_NEW_NO);
         $form->addElement(new Element\HTML('<legend>Export Orders Form</legend>'));
         $form->addElement(new Element\Radio("Is new customer:", "is_new_customers", $options, array("required" => 1)));
@@ -73,7 +79,7 @@ class CustomForm
      * @param \ArrayObject $dataObj
      * @return \ArrayObject
      */
-    public static function determinateCustomer(\ArrayObject $dataObj)
+    public static function determineCustomer(\ArrayObject $dataObj)
     {
         switch ($dataObj->offsetGet('is_new_customers')) {
             case self::CUSTOMER_IS_NEW_NO:
@@ -100,7 +106,7 @@ class CustomForm
     public function getForm()
     {
         if (empty($this->form)) {
-            $this->setForm(new Form("ExportOrdersForm"));
+            $this->setForm(new Form('ExportOrdersForm'));
         }
         return $this->form;
     }
@@ -108,7 +114,7 @@ class CustomForm
     /**
      * @return array
      */
-    public function getConfigure()
+    public function getConfig()
     {
         return $this->configure;
     }

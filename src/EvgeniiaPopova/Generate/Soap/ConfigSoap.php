@@ -16,7 +16,8 @@ class ConfigSoap extends Config
     /** @const Path alias for WSDL url in config */
     const WSDL_LOCATION = 'location';
 
-    /**Get Wsdl from array $options
+    /**
+     * Get Wsdl from array $options
      * @return string
      */
     public function getWsdl()
@@ -26,7 +27,8 @@ class ConfigSoap extends Config
         return $wsdl;
     }
 
-    /** Get options from config.yml
+    /**
+     * Get options from config.yml
      * @return array
      */
     public function getOptions()
