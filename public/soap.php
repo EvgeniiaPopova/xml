@@ -6,7 +6,6 @@
  * Date: 07.04.17
  */
 
-
 ini_set('display_errors', 1);
 error_reporting(E_ALL & ~E_NOTICE);
 $path = dirname(dirname(__FILE__));
@@ -25,7 +24,8 @@ try {
 
     $parser = new Parser();
     $parser->readXml($responseXml);
-    /** @TODO SOME OUTPUT FUNCTION */
+    print_r($parser);
+    /** @TODO SOME OUTPUT FUNCTION (don't khow yet what it would be here. So now it just print result array) */
 } catch (Exception $e) {
     print $e->getMessage();
 }

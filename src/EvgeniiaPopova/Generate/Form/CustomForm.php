@@ -9,7 +9,6 @@
 
 namespace Generate\Form;
 
-use Generate\Config;
 use PFBC\Form as Form;
 use PFBC\Element as Element;
 
