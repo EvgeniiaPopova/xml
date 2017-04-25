@@ -25,5 +25,4 @@ $xmlBuilder = $factory->getBuilder('CustomerExport');
 $xmlBuilder->buildXml($dataObj);
 
 /** @TODO XML name at the moment will always set. so here is no need in this check + */
-//header("Location: {$xmlName}");
 
