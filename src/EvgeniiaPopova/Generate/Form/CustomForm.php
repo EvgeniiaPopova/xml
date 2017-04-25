@@ -75,7 +75,6 @@ class CustomForm
     }
 
     /**
-     * @TODO not the best naming for method +
      * @param \ArrayObject $dataObj
      * @return \ArrayObject
      */

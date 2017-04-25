@@ -76,7 +76,6 @@ class Config
     /**
      * Get options
      * @return array
-     * @todo STORE OPTIONS +-?
      */
     public function getOptions()
     {
