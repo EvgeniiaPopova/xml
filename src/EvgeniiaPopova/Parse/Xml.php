@@ -7,7 +7,7 @@
  * Date: 21.04.17
  */
 
-namespace Parse\Xml;
+namespace Parse;
 
 /** @TODO bad naming for class - namespace has one value and class has another + */
 class Xml
