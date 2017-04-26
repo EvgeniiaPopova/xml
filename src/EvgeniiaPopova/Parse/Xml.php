@@ -52,12 +52,13 @@ class Xml
                 $data['ref'] = $reader->getAttribute('REF');
                 $data['urn'] = $reader->getAttribute('URN');
 
+                $reader->read();
                 if ($reader->nodeType == \XMLReader::TEXT) {
                     $data['value'] = $reader->value;
-                    foreach ($data as $item => $value) {
-                        $row = sprintf('%s = %s %s', $item, $value, PHP_EOL);
-                        $this->resultRows[] = $row;
-                    }
+                }
+                foreach ($data as $item => $value) {
+                    $row = sprintf('%s = %s %s', $item, $value, PHP_EOL);
+                    $this->resultRows[] = $row;
                 }
             }
         }

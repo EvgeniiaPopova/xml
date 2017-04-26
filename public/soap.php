@@ -25,7 +25,7 @@ try {
 
     $parser = new Parser();
     $parser->readXml($responseXml);
-    var_dump($parser);
+    print_r($parser);
 
 } catch (Exception $e) {
     print $e->getMessage();
