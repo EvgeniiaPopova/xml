@@ -9,7 +9,6 @@
 $path = dirname(dirname(__FILE__));
 require_once($path . '/vendor/autoload.php');
 
-use Generate\Form\CustomForm;
 use Generate\Xml\XmlExportFactory as Factory;
 
 $dataArray = $_POST;
