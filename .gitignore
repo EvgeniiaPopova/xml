@@ -42,3 +42,4 @@ Thumbs.db
 .idea/
 /git
 /composer.phar
+/public/soap2.php

@@ -6,6 +6,7 @@
  * Date: 07.04.17
  */
 
+
 ini_set('display_errors', 1);
 error_reporting(E_ALL & ~E_NOTICE);
 $path = dirname(dirname(__FILE__));
@@ -20,12 +21,12 @@ try {
     $wsdl = $config->getWsdl();
 
     $client = new SoapClient($wsdl, $options);
-    $responseXml = $client->ExportOrderStatus();
+    $responseXml = ($client->ExportOrderStatus());
 
     $parser = new Parser();
     $parser->readXml($responseXml);
-    print_r($parser);
-    /** @TODO SOME OUTPUT FUNCTION (don't khow yet what it would be here. So now it just print result array) */
+    var_dump($parser);
+
 } catch (Exception $e) {
     print $e->getMessage();
 }
