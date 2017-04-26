@@ -76,23 +76,6 @@ class CustomForm
     }
 
     /**
-     * @param \ArrayObject $dataObj
-     * @return \ArrayObject
-     */
-    public static function determineCustomer(\ArrayObject $dataObj)
-    {
-        switch ($dataObj->offsetGet('is_new_customers')) {
-            case self::CUSTOMER_IS_NEW_NO:
-                $dataObj->offsetSet('is_new_customers', -1);
-                break;
-            case self::CUSTOMER_IS_NEW_YES:
-            default:
-                $dataObj->offsetSet('is_new_customers', 1);
-        }
-        return $dataObj;
-    }
-
-    /**
      * @param \PFBC\Form $form
      */
     public function setForm(Form $form)
