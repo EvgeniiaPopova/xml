@@ -17,8 +17,8 @@ class CustomForm
     /**#@+
      * Form constants
      */
-    const CUSTOMER_IS_NEW_YES = 'Yes';
-    const CUSTOMER_IS_NEW_NO = 'No';
+    const CUSTOMER_IS_NEW_YES = 1;
+    const CUSTOMER_IS_NEW_NO = -1;
     /**#@-*/
 
     /**
@@ -63,7 +63,7 @@ class CustomForm
         $form->configure($config);
         $options = $this->getCustomerOptions();
         $form->addElement(new Element\HTML('<legend>Export Orders Form</legend>'));
-        $form->addElement(new Element\Radio("Is new customer:", "is_new_customers", $options, array("required" => 1)));
+        $form->addElement(new CustomRadio("Is new customer:", "is_new_customers", $options, array("required" => 1)));
         $form->addElement(new Element\Textbox("Other Ref:", 'other_ref', array("required" => 1)));
         $form->addElement(new Element\Textbox("Company Name:", 'company_name', array("required" => 1)));
         $form->addElement(new Element\Textbox("Web User:", 'web_user', array("required" => 1)));

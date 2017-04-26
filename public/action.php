@@ -15,10 +15,7 @@ use Generate\Xml\XmlExportFactory as Factory;
 $dataArray = $_POST;
 $dataObj = new ArrayObject($dataArray);
 
-/** @TODO Change logic
- */
-CustomForm::determineCustomer($dataObj);
-
+/** @TODO Change logic + (new class CustomRadio) */
 $factory = new Factory();
 $xmlBuilder = $factory->getBuilder('CustomerExport');
 $xmlBuilder->buildXml($dataObj);
