@@ -7,6 +7,7 @@ test:
   stream_context: false
   location: https://83.218.157.188/test/khaosids.exe/soap/IKosWeb
   uri: http://tempuri.org/
+  wsdl: https://83.218.157.188/test/khaosids.exe/wsdl/IKosWeb?wsdl
 prod:
   exceptions: 1
   trace: 1
@@ -15,4 +16,5 @@ prod:
   stream_context: false
   location: https://83.218.157.188/test/khaosids.exe/soap/IKosWeb
   uri: http://tempuri.org/
+  wsdl: https://83.218.157.188/test/khaosids.exe/wsdl/IKosWeb?wsdl
 ...

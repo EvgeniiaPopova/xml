@@ -23,7 +23,7 @@ class ConfigSoap extends Config
     public function getWsdl()
     {
         $options = $this->getOptions();
-        $wsdl = 'https://83.218.157.188/test/khaosids.exe/wsdl/IKosWeb?wsdl';
+        $wsdl = $options['wsdl'];
         return $wsdl;
     }
 
